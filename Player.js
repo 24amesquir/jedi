@@ -786,9 +786,8 @@ class Player {
             this.jumpTimer += 1
         } else if(this.jumpTimer == maxJumpTimer){
             autoJumpTimer += 1
-            if(autoJumpTimer > 120){
-              console.log('auto jump')
-              this.jumpTimer = 0 
+            if(autoJumpTimer > 60){
+              player.Jump()
               autoJumpTimer = 0
             }
         }
