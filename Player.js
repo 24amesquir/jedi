@@ -17,7 +17,7 @@ let playerIceRunAcceleration = 0.2;
 let mutePlayers = true;
 
 //variables added by me
-var autoJumpTimer = 30;
+var autoJumpTimer = 0;
 
 
 
@@ -784,12 +784,12 @@ class Player {
     UpdateJumpTimer() {
         if (this.isOnGround && this.jumpHeld && this.jumpTimer < maxJumpTimer) {
             this.jumpTimer += 1
-        } else if(this.jumpTimer > maxJumpTimer){
+        } else if(this.jumpTimer == maxJumpTimer){
             autoJumpTimer += 1
-            if(autoJumpTimer > 30){
+            if(autoJumpTimer > 120){
               console.log('auto jump')
+              autoJumpTimer = 0
             }
-            console.log('autoJumpTimer')
         }
     }
 
