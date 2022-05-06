@@ -16,6 +16,11 @@ let playerIceRunAcceleration = 0.2;
 
 let mutePlayers = true;
 
+//variables added by me
+var autoJumpTimer = 30;
+
+
+
 class PlayerState {
     constructor() {
         this.currentPos = createVector(width / 2, height - 200); // this is the top left corner of the hitbox
@@ -779,6 +784,12 @@ class Player {
     UpdateJumpTimer() {
         if (this.isOnGround && this.jumpHeld && this.jumpTimer < maxJumpTimer) {
             this.jumpTimer += 1
+        } else if(this.jumpTimer > maxJumpTimer){
+            autoJumpTimer += 1
+            if(autoJumpTimer > 30){
+              console.log('auto jump')
+            }
+            console.log('autoJumpTimer')
         }
     }
 
