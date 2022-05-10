@@ -1135,8 +1135,6 @@ class Player {
 
         } else if (this.currentPos.y > height - this.height) {
             if (this.currentLevelNo === 0) {
-                //oh no
-                // print("fuck me hes goin under")
                 this.currentLevelNo = 1; //lol fixed
                 this.playersDead = true;
                 this.hasFinishedInstructions = true;
