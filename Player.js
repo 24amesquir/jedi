@@ -785,11 +785,11 @@ class Player {
         if (this.isOnGround && this.jumpHeld && this.jumpTimer < maxJumpTimer) {
             this.jumpTimer += 1
         } else if(this.jumpTimer == maxJumpTimer){
-            autoJumpTimer += 1
-            if(autoJumpTimer > 60){
+            //autoJumpTimer += 1
+            //if(autoJumpTimer > 60){
               player.Jump()
-              autoJumpTimer = 0
-            }
+              //autoJumpTimer = 0
+            //}
         }
     }
 
