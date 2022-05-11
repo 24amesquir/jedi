@@ -1282,16 +1282,15 @@ class Player {
         }
     }
     music(songNumber){
-      if(songNumber < 2){
-        songNumber = 0
-      }else if(songNumber >= 1){
-        songNumber = 1
+      if(songNumber < 5){
+        //songNumber = 0
+        return
       }else if(songNumber >= 5){
         songNumber = 1
       }else if(songNumber >= 9){
-        songNumber = 1
-      }else if(songNumber >= ){
-        songNumber = 1
+        songNumber = 2
+      }else if(songNumber >= 24){
+        songNumber = 3
       }
       if(song){
         console.log(player.getTitle(currentSong.src))
