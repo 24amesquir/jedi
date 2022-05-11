@@ -1285,10 +1285,12 @@ class Player {
       if(song){
         console.log(player.getTitle(currentSong.src))
         if(player.getTitle(currentSong.src) == player.getTitle(songs[songNumber])){
+          console.log('same song so no change')
+          return
+        }else{
+          console.log(`a new song: ${player.getTitle(songs[songNumber])} so it changed and paused the old one ${player.getTitle(currentSong.src)}`)
           currentSong.pause()
           console.log(player.getTitle(currentSong.src))
-        }else{
-          console.log('it works i guess')
         }
       }
       currentSong = new Audio(songs[songNumber])
