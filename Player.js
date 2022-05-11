@@ -1282,15 +1282,26 @@ class Player {
         }
     }
     music(songNumber){
+      if(songNumber < 2){
+        songNumber = 0
+      }else if(songNumber >= 1){
+        songNumber = 1
+      }else if(songNumber >= 5){
+        songNumber = 1
+      }else if(songNumber >= 9){
+        songNumber = 1
+      }else if(songNumber >= ){
+        songNumber = 1
+      }
       if(song){
         console.log(player.getTitle(currentSong.src))
         if(player.getTitle(currentSong.src) == player.getTitle(songs[songNumber])){
           console.log('same song so no change')
           return
         }else{
-          console.log(`a new song: ${player.getTitle(songs[songNumber])} so it changed and paused the old one ${player.getTitle(currentSong.src)}`)
-          fade(currentSong)
-          console.log(player.getTitle(currentSong.src))
+            console.log(`a new song: ${player.getTitle(songs[songNumber])} so it changed and paused the old one ${player.getTitle(currentSong.src)}`)
+            fade(currentSong)
+            console.log(player.getTitle(currentSong.src))
         }
       }
       currentSong = new Audio(songs[songNumber])

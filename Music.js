@@ -18,10 +18,12 @@ function fade(id, out = true, rest = 8, amount = 0.1, speed = 150) {
   var i = 0;
   var fading = setInterval(function () {
     if (out) {
+      if(Math.floor(id.volume) == 0){clearInterval(fading)}
       id.volume = Math.round((id.volume-amount)*10)/10;
     }
     if (out == false) {
       if (i > rest && Math.round(id.volume<1)) {
+      if(Math.round(id.volume) == 1){clearInterval(fading);id.remove();return}
         id.volume = Math.round((id.volume + amount)*10)/10;
       }
     }
