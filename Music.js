@@ -12,3 +12,11 @@ let songs = [
   'https://cdn.glitch.global/0d238367-dcd8-4953-b22d-81023a5011e2/Jump%20King%20OST%20-%2011%20%20%20At%20First%20Sight.mp4?v=1652292201602',
   'https://cdn.glitch.global/0d238367-dcd8-4953-b22d-81023a5011e2/Jump%20King%20OST%20-%2012%20%20%20A%20Legend%20Lives%20On.mp4?v=1652292201762'
 ]
+var song = false;
+var currentSong;
+function play(song){
+  if(song){
+    currentSong.pause()
+  }
+  new Audio(songs[song]).play()
+}
