@@ -1282,13 +1282,21 @@ class Player {
         }
     }
     music(songNumber){
-      if()
       if(song){
-        currentSong.pause()
+        console.log(player.getTitle(currentSong))
+        if(player.getTitle(currentSong) == player.getTitle(songs[songNumber])){
+          currentSong.pause()
+        }else{
+          console.log('it works i guess')
+        }
       }
       currentSong = new Audio(songs[songNumber])
       currentSong.play()
       song = true;
+    }
+    getTitle(url){
+      var entitle = url.substring(url.indexOf('%20%20%20')+9)
+      var title = decodeURI(entitle.substring(0,entitle.indexOf('.mp4')))
     }
     CheckForCoinCollisions() {
         if (this.currentLevelNo < this.bestLevelReached) {
