@@ -1289,11 +1289,13 @@ class Player {
           return
         }else{
           console.log(`a new song: ${player.getTitle(songs[songNumber])} so it changed and paused the old one ${player.getTitle(currentSong.src)}`)
-          currentSong.pause()
+          fade(currentSong)
           console.log(player.getTitle(currentSong.src))
         }
       }
       currentSong = new Audio(songs[songNumber])
+      currentSong.volume = 0;
+      fade(currentSong,false)
       currentSong.play()
       song = true;
     }

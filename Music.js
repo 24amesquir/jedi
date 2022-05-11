@@ -14,21 +14,21 @@ let songs = [
 ]
 var song = false;
 var currentSong;
-function fade(id){
-
-    // Set the point in playback that fadeout begins. This is for a 2 second fade out.
-    var fadePoint = id.currentTime - 2; 
-
-    var fadeAudio = setInterval(function () {
-
-        // Only fade if past the fade out point or not at zero already
-        if ((id.currentTime >= fadePoint) && (id.volume != 0.0)) {
-            id.volume -= 0.1;
+function fade(id,out=true,rest=150,amount=.1){
+  var i = 0;
+  var fading = setInterval(
+    function(){
+      if(i>rest){
+        if(out){
+          id.volume -= amount;
+        }else if(out == false){
+          id.volume += amount;
         }
-        // When volume at zero stop all the intervalling
-        if (id.volume <= 0.0) {
-            clearInterval(fadeAudio);
-        }
-    }, 200);
-
+      }
+      i+=1;
+      if(i==1/amount+rest){
+        clearInterval(fading)
+        id.remove()
+      }
+    },150)
 }
