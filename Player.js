@@ -1283,9 +1283,10 @@ class Player {
     }
     music(songNumber){
       if(song){
-        console.log(player.getTitle(currentSong))
-        if(player.getTitle(currentSong) == player.getTitle(songs[songNumber])){
+        console.log(player.getTitle(currentSong.src))
+        if(player.getTitle(currentSong.src) == player.getTitle(songs[songNumber])){
           currentSong.pause()
+          console.log(player.getTitle(currentSong.src))
         }else{
           console.log('it works i guess')
         }
@@ -1294,9 +1295,8 @@ class Player {
       currentSong.play()
       song = true;
     }
-    getTitle(url){
-      var entitle = url.substring(url.indexOf('%20%20%20')+9)
-      var title = decodeURI(entitle.substring(0,entitle.indexOf('.mp4')))
+    getTitle(link){
+      return decodeURI(link.substring(link.indexOf('%20%20%20')+9).substring(0,link.substring(link.indexOf('%20%20%20')+9).indexOf('.mp4')))
     }
     CheckForCoinCollisions() {
         if (this.currentLevelNo < this.bestLevelReached) {
