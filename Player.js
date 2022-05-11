@@ -1281,11 +1281,14 @@ class Player {
             }
         }
     }
-    music(song){
+    music(songNumber){
+      if()
       if(song){
         currentSong.pause()
       }
-      currentSong = new Audio(songs[song]).play()
+      currentSong = new Audio(songs[songNumber])
+      currentSong.play()
+      song = true;
     }
     CheckForCoinCollisions() {
         if (this.currentLevelNo < this.bestLevelReached) {
