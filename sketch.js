@@ -49,7 +49,7 @@ let evolationSpeed = 1;
 
 function preload() {
     backgroundImage = loadImage('images/levelImages/1.png')
-    idleImage = loadImage('images/poses/idle.png')
+    idleImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/vader.png?v=1653017327251')
     squatImage = loadImage('images/poses/squat.png')
     jumpImage = loadImage('images/poses/jump.png')
     oofImage = loadImage('images/poses/oof.png')
