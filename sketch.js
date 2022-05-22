@@ -72,7 +72,7 @@ function preload() {
     fallSound = loadSound('sounds/fall.mp3')
     bumpSound = loadSound('sounds/bump.mp3')
     landSound = loadSound('sounds/land.mp3')
-    shootSound = loadSound('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/Star%20Wars%20Blaster%20sound%20effect.mp4?v=1653246248537')
+    shootSound = loadSound('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/Star%20Wars%20Blaster%20sound%20effect.mp3?v=1653246868790')
 
 
 }
