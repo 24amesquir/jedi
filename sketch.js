@@ -200,15 +200,15 @@ function draw() {
     
   
     //added by me
-  	for (var i = 0; i < bulletsFired.length; i++){
-		  bulletsFired[i].show();
-		  bulletsFired[i].update();
-		  if (bulletsFired[i].outOfBounds()){
+	for (var i = 0; i < bulletsFired.length; i++){
+		bulletsFired[i].display();
+		bulletsFired[i].update();
+		if (bulletsFired[i].outOfBounds()){
       		bulletsFired.splice(i,1);
     	}
-		  else if (bulletsFired[i].hitScan()){
+		/*else if (bulletsFired[i].hitScan()){
       		bulletsFired.splice(i,1);
-    	}
+    	}*/
 	}
 }
 

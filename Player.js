@@ -714,7 +714,7 @@ class Player {
     }
   
     shoot(){
-	      let oneBullet = new Bullet(10,0,player.currentPos.x,player.currentPos.y);
+	      let oneBullet = new bullet(10,0,player.currentPos.x,player.currentPos.y);
 	      bulletsFired.push(oneBullet);
     }
 
@@ -1356,25 +1356,4 @@ function AreLinesColliding(x1, y1, x2, y2, x3, y3, x4, y4) {
     }
     return [false, 0, 0]
 
-}
-function Bullet(X,Y,PX,PY){
-    this.speed = 2;
-    this.x = PX;
-    this.y = PY;
-    this.dir = createVector(X-PX, Y-PY).normalize()
-    this.r = 5;
-
-    this.show = function(){
-      fill(255,255,0);
-      stroke(128,128,0);
-      circle(this.x,this.y,this.r);
-    }
-    this.toMouse = function() {
-        this.x += this.dir.x * this.speed;
-        this.y += this.dir.y * this.speed;
-    }
-    this.onScreen = function() {
-      return this.x > -this.r && this.x < width+this.r &&
-              this.y > -this.r && this.y < height+this.r;
-    }
 }
