@@ -16,6 +16,8 @@ let playerIceRunAcceleration = 0.2;
 
 let mutePlayers = true;
 let bulletsFired = [];
+let bulletSpeed = .85;
+let bulletDropoff = .0125;
 
 //variables added by me
 var autoJumpTimer = 0;
@@ -714,8 +716,14 @@ class Player {
     }
   
     shoot(){
-	      let oneBullet = new bullet(10,0,player.currentPos.x,player.currentPos.y);
-	      bulletsFired.push(oneBullet);
+      console.log(player.facingRight)
+      if(player.facingRight){
+	      let oneBullet = new bullet(bulletSpeed,bulletDropoff);
+        bulletsFired.push(oneBullet);
+      }else{
+        let oneBullet = new bullet(-bulletSpeed,bulletDropoff);
+        bulletsFired.push(oneBullet);
+      }
     }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection

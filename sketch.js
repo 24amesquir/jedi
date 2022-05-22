@@ -72,6 +72,7 @@ function preload() {
     fallSound = loadSound('sounds/fall.mp3')
     bumpSound = loadSound('sounds/bump.mp3')
     landSound = loadSound('sounds/land.mp3')
+    shootSound = loadSoun('')
 
 
 }
