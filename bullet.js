@@ -1,15 +1,15 @@
 class bullet{
 	constructor(xSpd, ySpd){
-		this.x = player.currentPos.x;
-		this.y = player.currentPos.y;
+		this.x = player.currentPos.x+20;
+		this.y = player.currentPos.y+30;
 		this.xSpd = 12*xSpd;
 		this.ySpd = 12*ySpd;
 	}
 	display(){
 		push()
-		stroke(Math.floor(Math.random()*55+1)+200, 0, 0)
-		fill(255, 0, 0, 135);
-		rect(this.x, this.y, 50, 10);
+		stroke(255, 0, 0)
+		fill(Math.floor(Math.random()*55+1)+180, 0, 0, 135);
+		rect(this.x, this.y, 58, 8);
 		pop();
 	}
 	
