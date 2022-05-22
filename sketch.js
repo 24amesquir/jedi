@@ -50,14 +50,14 @@ let evolationSpeed = 1;
 function preload() {
     backgroundImage = loadImage('images/levelImages/1.png')
     idleImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_idle.png?v=1653191491609')
-    squatImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_shooting.png?v=1653191491610')
-    jumpImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_jump.png?v=1653191852609')
+    squatImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_squat.png?v=1653192253501')
+    jumpImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_fallen.png?v=1653192470153')
     oofImage = loadImage('images/poses/oof.png')
     run1Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run1.png?v=1653191491610')
     run2Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run2.png?v=1653191491610')
     run3Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run3.png?v=1653191491728')
-    fallenImage = loadImage('images/poses/fallen.png')
-    fallImage = loadImage('images/poses/fall.png')
+    fallenImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_fallen.png?v=1653192470153')
+    fallImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_jump.png?v=1653191852609')
 
 
     snowImage = loadImage('images/snow3.png')
