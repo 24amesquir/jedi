@@ -725,6 +725,7 @@ class Player {
         bulletsFired.push(oneBullet);
       }
       shootSound.play();
+      image(squatImage,-20,-35 );
     }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection
