@@ -47,6 +47,8 @@ let increaseActionsEveryXGenerations = 10;
 let evolationSpeed = 1;
 
 
+
+
 function preload() {
     backgroundImage = loadImage('images/levelImages/1.png')
     idleImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_idle.png?v=1653191491609')
@@ -195,8 +197,19 @@ function draw() {
         text('Moves: ' + population.players[0].brain.instructions.length, 200, 35);
         text('Best Height: ' + population.bestHeight, 400, 35);
     }
-
-
+    
+  
+    //added by me
+  	for (var i = 0; i < bulletsFired.length; i++){
+		  bulletsFired[i].display();
+		  bulletsFired[i].update();
+		  if (bulletsFired[i].outOfBounds()){
+      		bulletsFired.splice(i,1);
+    	}
+		  else if (bulletsFired[i].hitScan()){
+      		bulletsFired.splice(i,1);
+    	}
+	}
 }
 
 let previousFrameRate = 60;
