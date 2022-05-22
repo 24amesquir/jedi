@@ -5,12 +5,11 @@ class bullet{
 		this.xSpd = 12*xSpd;
 		this.ySpd = 12*ySpd;
 	}
-	
 	display(){
 		push()
-		stroke(230, 255, 0);
-		fill(230, 255, 0, 135);
-		ellipse(this.x, this.y, 10);
+		stroke(Math.floor(Math.random()*55+1)+200, 0, 0)
+		fill(255, 0, 0, 135);
+		rect(this.x, this.y, 50, 10);
 		pop();
 	}
 	
