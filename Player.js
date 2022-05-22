@@ -724,6 +724,7 @@ class Player {
         let oneBullet = new bullet(-bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }
+      shootSound.play();
     }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection
