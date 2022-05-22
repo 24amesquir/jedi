@@ -105,7 +105,8 @@ class PlayerState {
         // player.isWaitingToStartAction = this.isWaitingToStartAction;
         // player.actionStarted = this.actionStarted;
     }
-
+    
+  
     clone() {
         let clone = new PlayerState();
         clone.currentPos = this.currentPos.copy();
@@ -709,6 +710,10 @@ class Player {
             jumpSound.playMode('sustain');
             jumpSound.play();
         }
+    }
+  
+    shoot(){
+      console.log('shot')    
     }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection

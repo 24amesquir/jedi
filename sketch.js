@@ -233,7 +233,7 @@ function setupCanvas() {
 
 function keyPressed() {
     switch (key) {
-        case ' ':
+        case 'Z':
             player.jumpHeld = true
             break;
         case 'R':
@@ -244,6 +244,10 @@ function keyPressed() {
             jumpSound.stop();
             landSound.stop();
             fallSound.stop();
+            break;
+        case 'X':
+            shooting = true;
+            player.shoot();
             break;
     }
 
@@ -273,7 +277,7 @@ function keyReleased() {
             break;
 
 
-        case ' ':
+        case 'Z':
 
             if (!creatingLines) {
                 player.jumpHeld = false
@@ -309,6 +313,10 @@ function keyReleased() {
                 mousePos1 = null;
                 mousePos2 = null;
             }
+      case 'X':
+          if(shooting){
+            console.log('stop shooting')
+          }
     }
 
     switch (keyCode) {
