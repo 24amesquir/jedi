@@ -752,7 +752,7 @@ class Player {
             // ok so we need to check each side of the
             // wait i just realized there is no way that only the l or r side is touching the digonal
             //wait there might be hold on
-            // ok jsut check all of them
+            // ok just check all of them
 
             let tl = this.currentPos.copy();
             let tr = tl.copy();

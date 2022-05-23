@@ -1,6 +1,10 @@
 class bullet{
 	constructor(xSpd, ySpd){
-		this.x = player.currentPos.x+20;
+    if(xSpd>0){
+		this.x = player.currentPos.x+34;
+    }else{
+      this.x = player.currentPos.x-34;
+    }
 		this.y = player.currentPos.y+30;
 		this.xSpd = 12*xSpd;
 		this.ySpd = 12*ySpd;
