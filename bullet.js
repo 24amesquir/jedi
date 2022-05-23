@@ -9,7 +9,7 @@ class bullet{
 		push()
 		stroke(255, 0, 0)
 		fill(Math.floor(Math.random()*55+1)+180, 0, 0, 135);
-		rect(this.x, this.y, 29, 4);
+		rect(this.x, this.y, 29, 4); 
 		pop();
 	}
 	

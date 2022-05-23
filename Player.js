@@ -716,6 +716,7 @@ class Player {
     }
   
     shoot(){
+      image(shootImage,0,0)
       console.log(player.facingRight)
       if(player.facingRight){
 	      let oneBullet = new bullet(bulletSpeed,bulletDropoff);
