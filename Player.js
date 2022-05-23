@@ -716,7 +716,6 @@ class Player {
     }
   
     shoot(){
-      image(shootImage,0,0)
       console.log(player.facingRight)
       if(player.facingRight){
 	      let oneBullet = new bullet(bulletSpeed,bulletDropoff);
@@ -726,7 +725,7 @@ class Player {
         bulletsFired.push(oneBullet);
       }
       shootSound.play();
-      image(squatImage,-20,-35 );
+      image(shootImage,0,0)
     }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection
