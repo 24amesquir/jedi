@@ -46,6 +46,8 @@ let increaseActionsByAmount = 5;
 let increaseActionsEveryXGenerations = 10;
 let evolationSpeed = 1;
 
+let quickJump = true;
+
 
 
 
@@ -258,7 +260,9 @@ function setupCanvas() {
 function keyPressed() {
     switch (key) {
         case 'Z':
-            player.jumpHeld = true
+            player.jumpHeld = true;
+            quickJump = true;
+            setTimeout(function(){quickJump = false},1000)
             break;
         case 'R':
             population.ResetAllPlayers()
