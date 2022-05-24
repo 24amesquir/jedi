@@ -1,6 +1,6 @@
 let minJumpSpeed = 5
 let maxJumpSpeed = 22
-let maxJumpTimer = 30
+let maxJumpTimer = 20
 let jumpSpeedHorizontal = 8
 let terminalVelocity = 20
 let gravity = 0.6;

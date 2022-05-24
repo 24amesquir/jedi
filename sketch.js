@@ -306,10 +306,13 @@ function keyReleased() {
 
 
         case 'Z':
-
             if (!creatingLines) {
+                if(quickJump){
+                  minJumpSpeed = 8;
+                }
                 player.jumpHeld = false
                 player.Jump()
+                minJumpSpeed = 5;
             }
             break;
         case 'R':
