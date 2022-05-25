@@ -727,6 +727,13 @@ class Player {
       shootSound.play();
       image(shootImage,0,0)
     }
+  
+    Dash() {
+      if (!this.isOnGround) {
+        return;
+      }
+      let verticalJumpSpeed = map(this.jumpTimer, 0, maxJumpTimer, minJumpSpeed, maxJumpSpeed)
+    }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection
     // this is done by taking the collision of the 4 lines that make up the hitbox
