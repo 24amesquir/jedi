@@ -25,7 +25,16 @@
 <body>
 <center>
     <div id="canvas"></div>
-    <input id="color_pick"type="color" value="#ff0000" onchange="pickRedInt()">
-</center>
+    <input style="width:60px;height:60px;border:0;outline:0;" type="color" onchange="printColor(event)" value="rgb(200,0,0)">
+  </center>
 </body>
 </html>
+<script>
+function printColor(ev) {
+  const color = ev.target.value
+  r = parseInt(color.substr(1,2), 16)
+  g = parseInt(color.substr(3,2), 16)
+  b = parseInt(color.substr(5,2), 16)
+  console.log(`red: ${r}, green: ${g}, blue: ${b}`)
+}
+</script>
