@@ -87,7 +87,7 @@ function preload() {
     snowImage = loadImage('images/snow3.png')
     for (let i = 1; i <= 43; i++) {
         if(i==1){levelImages.push(backgroundImage)}else if(i==2){
-          levelImages.push(loadImage('images/levelImages/'+i+'.png'))
+          levelImages.push(loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/c96556ea-4320-4be0-86c9-764edc216ffe.image.png?v=1653511418507'))
         //levelImages.push(loadImage('images/levelImages/' + i + '.png'))
         }
     }
@@ -341,7 +341,7 @@ function keyPressed() {
             player.rightHeld = true;
             break;
         case 32:
-          testingSinglePlayer = false
+          //testingSinglePlayer = false
           break;
       case 16:
         player.Dash()
