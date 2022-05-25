@@ -285,9 +285,7 @@ function showLines() {
 
 
 function setupCanvas() {
-    //canvas = createCanvas(1200, 950);
-    //added by me
-    canvas = createCanvas(screen.width, screen.height);
+    canvas = createCanvas(1200, 950);
     canvas.parent('canvas');
     width = canvas.width;
     height = canvas.height - 50;
