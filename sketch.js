@@ -351,7 +351,7 @@ function keyPressed() {
         break;
       case 13:
         if(creatingLines){
-          document.body.innerHTML += `<center><textarea style='width:fit-content;height:400px;'>${outputLines()}</textarea><center>`
+          document.body.innerHTML += `<center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
         }
     }
 
