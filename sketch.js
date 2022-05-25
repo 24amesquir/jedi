@@ -47,7 +47,8 @@ let increaseActionsEveryXGenerations = 10;
 let evolationSpeed = 1;
 
 let quickJump = true;
-var shot;
+var shoot = 0;
+var reload = false;
 
 
 
@@ -136,7 +137,9 @@ let levelNumber = 0;
 function draw() {
     background(10);
     if(!window.focused){
-      clearInterval(shot)
+      for(var i = 0;i<=shoot;i++){
+        clearInterval(i)
+      }
       player.jumpHeld = false
     }
 
@@ -275,10 +278,18 @@ function keyPressed() {
             break;
         case 'X':
             shooting = true;
-            shoot = setInterval(function(){
-              if(!shooting){clearInterval(shot)}
-              player.shoot();
-            },475)//firerate of the gun
+            if(reload = true){
+                setTimeout(function(){player.shoot()},475)
+            }
+            if(!reload){
+              player.shoot()
+              reload = true;
+            }
+              if(!player.falling){
+                shoot = setInterval(function(){
+                  player.shoot();
+                },475)//firerate of the gun
+              }
             break;
     }
 
@@ -340,6 +351,9 @@ function keyReleased() {
             }
       case 'X':
         shooting = false;
+        for(var i = 0;i<=shoot;i++){
+          clearInterval(i)
+        }
     }
 
     switch (keyCode) {
