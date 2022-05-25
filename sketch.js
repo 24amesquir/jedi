@@ -35,6 +35,7 @@ let fallSound = null;
 let jumpSound = null;
 let bumpSound = null;
 let landSound = null;
+let shootSound = null;
 
 let snowImage = null;
 
@@ -84,9 +85,10 @@ function preload() {
 
 
     snowImage = loadImage('images/snow3.png')
-
     for (let i = 1; i <= 43; i++) {
+        if(i==1){levelImages.push(backgroundImage)}else{
         levelImages.push(loadImage('images/levelImages/' + i + '.png'))
+        }
     }
 
     jumpSound = loadSound('sounds/jump.mp3')
@@ -283,7 +285,9 @@ function showLines() {
 
 
 function setupCanvas() {
-    canvas = createCanvas(1200, 950);
+    //canvas = createCanvas(1200, 950);
+    //added by me
+    canvas = createCanvas(screen.width, screen.height);
     canvas.parent('canvas');
     width = canvas.width;
     height = canvas.height - 50;
@@ -303,14 +307,16 @@ function keyPressed() {
               player.shoot()
               reload = true;
             }else{
+              reload = false;
               setTimeout(function(){player.shoot();console.log('bruh')},475)
-              reload = false
             }
-              if(!player.falling){
+              if(!player.falling && !player.jumpHeld && !player.hasFallen){
                 shoot = setInterval(function(){
-                  if(!player.isOnGround) return;
+                  if(!player.isOnGround || player.jumpHeld || player.hasFallen) return;
                   player.shoot();
                 },475)//firerate of the gun
+              }if(player.hasFallen){
+                player.hasFallen = false;
               }
             break;
 
