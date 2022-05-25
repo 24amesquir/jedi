@@ -283,6 +283,14 @@ function showLines() {
 
 }
 
+function outputLines() {
+  lmao='';
+  for(var i=0;i<lines.length;i++){
+    var lmao = lmao + `tempLevel.lines.push(new Line(${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}))\n`
+  };
+  return lmao
+}
+
 
 function setupCanvas() {
     canvas = createCanvas(1200, 950);

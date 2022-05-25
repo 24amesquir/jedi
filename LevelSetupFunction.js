@@ -2,7 +2,7 @@ let levels = []
 
 function setupLevels() {
     let tempLevel = new Level();
-    tempLevel.lines.push(new Line(20, 0, 20, 460));
+    /*tempLevel.lines.push(new Line(20, 0, 20, 460));
     tempLevel.lines.push(new Line(20, 460, 320, 460));
     tempLevel.lines.push(new Line(320, 460, 320, 820));
     tempLevel.lines.push(new Line(320, 820, 880, 820));
@@ -12,10 +12,47 @@ function setupLevels() {
     tempLevel.lines.push(new Line(460, 100, 740, 100));
     tempLevel.lines.push(new Line(460, 100, 460, 220));
     tempLevel.lines.push(new Line(460, 220, 740, 220));
-    tempLevel.lines.push(new Line(740, 220, 740, 100));
+    tempLevel.lines.push(new Line(740, 220, 740, 100));*/
     // tempLevel.lines.push(new Line(320,260,520, 460));
     // tempLevel.lines.push(new Line(120,460,320, 260));
     // tempLevel.lines.push(new Line(680,820,1080,420));
+  tempLevel.lines.push(new Line(20, 0, 20, 820))
+  tempLevel.lines.push(new Line(20, 820, 1180, 820))
+  tempLevel.lines.push(new Line(1180, 0, 1180, 820))
+  tempLevel.lines.push(new Line(180, 680, 300, 680))
+  tempLevel.lines.push(new Line(300, 640, 300, 680))
+  tempLevel.lines.push(new Line(180, 640, 300, 640))
+  tempLevel.lines.push(new Line(180, 640, 180, 680))
+  tempLevel.lines.push(new Line(380, 680, 480, 680))
+  tempLevel.lines.push(new Line(480, 640, 480, 680))
+  tempLevel.lines.push(new Line(380, 640, 480, 640))
+  tempLevel.lines.push(new Line(380, 640, 380, 680))
+  tempLevel.lines.push(new Line(700, 600, 780, 600))
+  tempLevel.lines.push(new Line(780, 520, 780, 600))
+  tempLevel.lines.push(new Line(700, 520, 780, 520))
+  tempLevel.lines.push(new Line(700, 520, 700, 600))
+  tempLevel.lines.push(new Line(980, 480, 1180, 480))
+  tempLevel.lines.push(new Line(980, 480, 980, 820))
+  tempLevel.lines.push(new Line(900, 180, 900, 240))
+  tempLevel.lines.push(new Line(620, 240, 900, 240))
+  tempLevel.lines.push(new Line(620, 180, 620, 240))
+  tempLevel.lines.push(new Line(620, 180, 900, 180))
+  tempLevel.lines.push(new Line(460, 240, 560, 240))
+  tempLevel.lines.push(new Line(460, 220, 460, 240))
+  tempLevel.lines.push(new Line(460, 220, 560, 220))
+  tempLevel.lines.push(new Line(560, 220, 560, 240))
+  tempLevel.lines.push(new Line(320, 240, 400, 240))
+  tempLevel.lines.push(new Line(400, 220, 400, 240))
+  tempLevel.lines.push(new Line(320, 220, 400, 220))
+  tempLevel.lines.push(new Line(320, 220, 320, 240))
+  tempLevel.lines.push(new Line(160, 240, 260, 240))
+  tempLevel.lines.push(new Line(160, 220, 160, 240))
+  tempLevel.lines.push(new Line(160, 220, 260, 220))
+  tempLevel.lines.push(new Line(260, 220, 260, 240))
+  tempLevel.lines.push(new Line(80, 240, 120, 240))
+  tempLevel.lines.push(new Line(80, 220, 80, 240))
+  tempLevel.lines.push(new Line(80, 220, 120, 220))
+  tempLevel.lines.push(new Line(120, 220, 120, 240))
     levels.push(tempLevel);
 
     tempLevel = new Level();
