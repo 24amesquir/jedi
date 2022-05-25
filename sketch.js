@@ -20,7 +20,7 @@ let run2Image = null;
 let run3Image = null;
 let fallenImage = null;
 let fallImage = null;
-let showingLines = false;
+let showingLines = true;
 let showingCoins = false;
 let levelImages = [];
 
@@ -86,7 +86,8 @@ function preload() {
 
     snowImage = loadImage('images/snow3.png')
     for (let i = 1; i <= 43; i++) {
-        if(i==1){levelImages.push(backgroundImage)}else{
+        if(i==1){levelImages.push(backgroundImage)}else if(i==2){
+          levelImages.push(loadImage('images/levelImages/'+i+'.png'))
         //levelImages.push(loadImage('images/levelImages/' + i + '.png'))
         }
     }
@@ -325,7 +326,11 @@ function keyPressed() {
                 player.hasFallen = false;
               }
             break;
-
+      case 'L':
+        creatingLines = true;
+        showingLines = false;
+        document.getElementsByTagName('input')[0].style.display = 'none';
+        colored = false;
     }
 
     switch (keyCode) {
@@ -344,6 +349,10 @@ function keyPressed() {
       case 27:
         colored = true;
         break;
+      case 13:
+        if(creatingLines){
+          document.body.innerHTML += `<textarea>${outputLines()}</textarea>`
+        }
     }
 
 }
