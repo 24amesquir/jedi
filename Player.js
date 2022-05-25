@@ -717,16 +717,14 @@ class Player {
     }
   
     shoot(){
-      console.log(player.facingRight)
       if(player.facingRight){
-	      let oneBullet = new bullet(bulletSpeed,bulletDropoff);
+        let oneBullet = new bullet(bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }else{
         let oneBullet = new bullet(-bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }
       shootSound.play();
-      image(shootImage,0,0)
     }
   
     Dash() {

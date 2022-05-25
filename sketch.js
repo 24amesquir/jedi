@@ -47,6 +47,7 @@ let increaseActionsEveryXGenerations = 10;
 let evolationSpeed = 1;
 
 let quickJump = true;
+var shot;
 
 
 
@@ -134,6 +135,10 @@ let levelNumber = 0;
 
 function draw() {
     background(10);
+    if(!window.focused){
+      clearInterval(shot)
+      player.jumpHeld = false
+    }
 
 
     // if(frameCount % 5==0 ){
@@ -270,7 +275,10 @@ function keyPressed() {
             break;
         case 'X':
             shooting = true;
-            player.shoot();
+            shoot = setInterval(function(){
+              if(!shooting){clearInterval(shot)}
+              player.shoot();
+            },475)//firerate of the gun
             break;
     }
 
@@ -327,14 +335,11 @@ function keyReleased() {
             break;
         case 'D':
             if (creatingLines) {
-
                 mousePos1 = null;
                 mousePos2 = null;
             }
       case 'X':
-          if(shooting){
-            console.log('stop shooting')
-          }
+        shooting = false;
     }
 
     switch (keyCode) {
@@ -345,13 +350,7 @@ function keyReleased() {
             player.rightHeld = false;
             break;
         case DOWN_ARROW:
-            evolationSpeed = constrain(evolationSpeed - 1, 0, 50);
-            print(evolationSpeed)
-
-            break;
-        case UP_ARROW:
-            evolationSpeed = constrain(evolationSpeed + 1, 0, 50);
-            print(evolationSpeed)
+            //squat()
             break;
     }
 }
