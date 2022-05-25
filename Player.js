@@ -19,6 +19,10 @@ let bulletsFired = [];
 let bulletSpeed = .85;
 let bulletDropoff = .0125;
 let canDash = true;
+var colored = false;
+var r = 200;
+var g = 0;
+var b = 0;
 
 //variables added by me
 var autoJumpTimer = 0;
@@ -635,20 +639,38 @@ class Player {
             push()
             scale(-1, 1);
             if (this.hasBumped) {
+                if(colored){
+                  tint(r,g,b);//changes color
+                }
                 image(imageToUse, -70, -30);
             } else if (imageToUse == jumpImage || imageToUse == fallImage) {
+                if(colored){
+                  tint(r,g,b);//changes color
+                }
                 image(imageToUse, -70, -28);
             } else {
+                if(colored){
+                  tint(r,g,b);//changes color
+                }
                 image(imageToUse, -70, -35);
             }
             pop()
         } else {
 
             if (this.hasBumped) {
+                if(colored){
+                  tint(r,g,b);//changes color
+                }
                 image(imageToUse, -20, -30);
             } else if (imageToUse == jumpImage || imageToUse == fallImage) {
+                if(colored){
+                  tint(r,g,b);//changes color
+                }
                 image(imageToUse, -20, -28);
             } else {
+                if(colored){
+                  tint(r,g,b);//changes color
+                }
                 image(imageToUse, -20, -35);
             }
 

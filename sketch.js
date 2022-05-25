@@ -291,9 +291,6 @@ function keyPressed() {
                 },475)//firerate of the gun
               }
             break;
-        case 'Shift':
-          player.Dash()
-          break;
 
     }
 
@@ -309,6 +306,10 @@ function keyPressed() {
           break;
       case 16:
         player.Dash()
+        break;
+      case 27:
+        colored = true;
+        break;
     }
 
 }
