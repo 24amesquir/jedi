@@ -294,9 +294,7 @@ function keyPressed() {
         case 'Shift':
           player.Dash()
           break;
-        case 'Space':
-          testingSinglePlayer = false;
-          break;
+
     }
 
     switch (keyCode) {
@@ -306,6 +304,11 @@ function keyPressed() {
         case RIGHT_ARROW:
             player.rightHeld = true;
             break;
+        case 32:
+          testingSinglePlayer = false
+          break;
+      case 16:
+        player.Dash()
     }
 
 }
