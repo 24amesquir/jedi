@@ -278,12 +278,12 @@ function keyPressed() {
             break;
         case 'X':
             shooting = true;
-            if(reload = true){
-                setTimeout(function(){player.shoot()},475)
-            }
             if(!reload){
               player.shoot()
               reload = true;
+            }else{
+              setTimeout(function(){player.shoot();console.log('bruh')},475)
+              reload = false
             }
               if(!player.falling){
                 shoot = setInterval(function(){
@@ -291,6 +291,12 @@ function keyPressed() {
                 },475)//firerate of the gun
               }
             break;
+        case 'Shift':
+          player.Dash()
+          break;
+        case 'Space':
+          testingSinglePlayer = false;
+          break;
     }
 
     switch (keyCode) {
