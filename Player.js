@@ -18,6 +18,7 @@ let mutePlayers = true;
 let bulletsFired = [];
 let bulletSpeed = .85;
 let bulletDropoff = .0125;
+let canDash = true;
 
 //variables added by me
 var autoJumpTimer = 0;
@@ -732,7 +733,14 @@ class Player {
       if (!this.isOnGround) {
         return;
       }
-      let verticalJumpSpeed = map(this.jumpTimer, 0, maxJumpTimer, minJumpSpeed, maxJumpSpeed)
+      canDash = false;
+      if(player.facingRight){
+        this.currentSpeed = createVector(0, -22)
+      }else{
+        this.currentSpeed = createVector(0, 22)
+      }
+      setTimeout(function(){canDash = true})
+
     }
 
     // to determine if we are colliding with any walls or shit we need to do some collision detection
