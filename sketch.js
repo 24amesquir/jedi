@@ -87,7 +87,7 @@ function preload() {
     snowImage = loadImage('images/snow3.png')
     for (let i = 1; i <= 43; i++) {
         if(i==1){levelImages.push(backgroundImage)}else{
-        levelImages.push(loadImage('images/levelImages/' + i + '.png'))
+        //levelImages.push(loadImage('images/levelImages/' + i + '.png'))
         }
     }
 
@@ -125,12 +125,12 @@ function drawMousePosition() {
     push();
 
 
-    fill(255, 0, 0)
+    fill(64, 136, 120)
     noStroke();
     ellipse(snappedX, snappedY, 5);
 
     if (mousePos1 != null) {
-        stroke(255, 0, 0)
+        stroke(64, 136, 120)
         strokeWeight(5)
         line(mousePos1.x, mousePos1.y, snappedX, snappedY)
     }
