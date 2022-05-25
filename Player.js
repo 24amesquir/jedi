@@ -166,7 +166,7 @@ class Player {
         this.isRunning = false;
         this.isSlidding = false;
         this.currentRunIndex = 1;
-        this.runCycle = [run1Image, run1Image, run1Image, run1Image, run2Image, run2Image, run2Image, run2Image, run3Image, run3Image, run4Image, run4Image, run5Image, run5Image, run6Image, run6Image, run7Image, run7Image, run8Image, run8Image, run9Image, run9Image, run10Image, run10Image, run11Image, run11Image, run12Image, run12Image]
+        this.runCycle = [run1Image, run1Image, run1Image, run1Image, run1Image, run2Image, run2Image, run2Image, run2Image, run2Image, run3Image, run3Image, run3Image, run3Image, run3Image, run4Image, run4Image, run4Image, run4Image, run4Image, run5Image, run5Image, run5Image, run5Image, run5Image, run6Image, run6Image, run6Image, run6Image, run6Image, run7Image, run7Image, run7Image, run7Image, run7Image, run8Image, run8Image, run8Image, run8Image, run8Image, run9Image, run9Image, run9Image, run9Image, run9Image, run10Image, run10Image, run10Image, run10Image, run10Image, run11Image, run11Image, run11Image, run11Image, run11Image, run12Image, run12Image, run12Image, run12Image, run12Image, run13Image, run13Image, run13Image, run13Image, run13Image, run14Image, run14Image, run14Image, run14Image, run14Image, run15Image, run15Image, run15Image, run15Image, run15Image, run16Image, run16Image, run16Image, run16Image, run16Image]
         this.sliddingRight = false;
 
         // this.currentLevel = null;

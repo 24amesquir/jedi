@@ -69,6 +69,10 @@ function preload() {
     run10Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run10.png?v=1653248643453')
     run11Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run11.png?v=1653269845592')
     run12Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run12.png?v=1653269845592')
+    run13Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run13.png?v=1653446529788')
+    run14Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run14.png?v=1653446529865')
+    run15Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run14.png?v=1653446529865')
+    run16Image = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_run16.png?v=1653446529962')
     shootImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_shooting.png?v=1653191491610')
     fallenImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/test-1.png?v=1653193426640')
     fallImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_fall.png?v=1653193117383')
@@ -212,7 +216,7 @@ function draw() {
     }
     
   
-    //added by me
+  //added by me
 	for (var i = 0; i < bulletsFired.length; i++){
 		bulletsFired[i].display();
 		bulletsFired[i].update();
@@ -264,15 +268,6 @@ function keyPressed() {
             quickJump = true;
             setTimeout(function(){quickJump = false},1000)
             break;
-        case 'R':
-            population.ResetAllPlayers()
-            break;
-        case 'S':
-            bumpSound.stop();
-            jumpSound.stop();
-            landSound.stop();
-            fallSound.stop();
-            break;
         case 'X':
             shooting = true;
             player.shoot();
@@ -297,14 +292,6 @@ cloneOfBestPlayer = null;
 function keyReleased() {
 
     switch (key) {
-        case 'B':
-            replayingBestPlayer = true;
-            cloneOfBestPlayer = population.cloneOfBestPlayerFromPreviousGeneration.clone();
-            evolationSpeed = 1;
-            mutePlayers = false;
-            break;
-
-
         case 'Z':
             if (!creatingLines) {
                 if(quickJump){
