@@ -862,7 +862,6 @@ class Player {
 
     GetImageToUseBasedOnState() {
 
-
         if (this.jumpHeld && this.isOnGround) return squatImage;
         if (this.hasFallen) return fallenImage;
         if (this.hasBumped) return oofImage;
@@ -875,6 +874,7 @@ class Player {
 
         }
 
+        if(this.isOnGround && this.shooting) return shootImage;
         if (this.isOnGround) return idleImage;
         return fallImage;
     }
