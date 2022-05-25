@@ -874,7 +874,7 @@ class Player {
 
         }
 
-        if(this.isOnGround && this.shooting) return shootImage;
+        if(this.isOnGround && shooting) return shootImage;
         if (this.isOnGround) return idleImage;
         return fallImage;
     }

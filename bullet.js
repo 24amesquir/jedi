@@ -1,11 +1,13 @@
+var offsetY = 48;
+var offsetX = 59;
 class bullet{
 	constructor(xSpd, ySpd){
     if(xSpd>0){
-		this.x = player.currentPos.x+34;
+		this.x = player.currentPos.x+offsetX;
     }else{
-      this.x = player.currentPos.x-34;
+      this.x = player.currentPos.x-offsetX;
     }
-		this.y = player.currentPos.y+30;
+		this.y = player.currentPos.y+offsetY;
 		this.xSpd = 12*xSpd;
 		this.ySpd = 12*ySpd;
 	}

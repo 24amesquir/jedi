@@ -51,6 +51,7 @@ let evolationSpeed = 1;
 let quickJump = true;
 var shoot = 0;
 var reload = false;
+var shooting = false;
 
 
 
@@ -306,6 +307,7 @@ function keyPressed() {
             }
               if(!player.falling){
                 shoot = setInterval(function(){
+                  if(!player.isOnGround) return;
                   player.shoot();
                 },475)//firerate of the gun
               }
