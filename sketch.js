@@ -5,7 +5,9 @@ let canvas = null;
 let player = null;
 let lines = [];
 let backgroundImage = null;
-
+var segmentCount = 24;
+var radius = 300;
+var colorWheel = false;
 
 let creatingLines = false;
 
@@ -235,6 +237,23 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
+  if(!colorWheel){
+    return
+  }
+  
+  
+  colorMode(HSB, 360,width,height);
+  var angleStep = floor(360/segmentCount);
+  beginShape(TRIANGLE_FAN);
+    vertex(width/2,height/2);
+    for(var angle =0; angle <= 360; angle += angleStep){
+      var vx = width/2 + cos(radians(angle))* radius;
+      var vy = height/2 + sin(radians(angle))* radius;
+      vertex(vx, vy);
+      fill(angle, mouseX, mouseY);
+      stroke(angle,mouseX,mouseY);
+    }
+  endShape();
 }
 
 let previousFrameRate = 60;
