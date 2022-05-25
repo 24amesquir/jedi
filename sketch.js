@@ -57,7 +57,7 @@ var shooting = false;
 
 
 function preload() {
-    backgroundImage = loadImage('images/levelImages/1.png')
+    backgroundImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/geonosis_pixel.png?v=1653500412607')
     idleImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_idle.png?v=1653191491609')
     squatImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_squat.png?v=1653192253501')
     jumpImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_jump.png?v=1653192860784')
@@ -108,6 +108,7 @@ function setup() {
     fallSound.playMode('sustain');
     bumpSound.playMode('sustain');
     landSound.playMode('sustain');
+    shootSound.playMode('sustain');
 
     // lines.push(new Line(200,height - 80,width - 200, height-80));
     // lines.push(new Line(10,height - 500,200, height-500));
