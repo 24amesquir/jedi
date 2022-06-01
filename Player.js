@@ -739,7 +739,10 @@ class Player {
     }
   
     shoot(){
-      if(player.facingRight){
+      if(player.downHeld || player.upHeld){
+        var toggle = true;
+      }else{}
+      if(player.facingRight && ){
         let oneBullet = new bullet(bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }else{

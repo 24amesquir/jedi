@@ -351,6 +351,12 @@ function keyPressed() {
         case RIGHT_ARROW:
             player.rightHeld = true;
             break;
+        case UP_ARROW:
+            player.upHeld = true;
+            break;
+        case DOWN_ARROW:
+            player.downHeld = true;
+            break;
         case 32:
           //testingSinglePlayer = false
           break;
