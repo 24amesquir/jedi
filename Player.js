@@ -23,6 +23,7 @@ var colored = false;
 var r = 200;
 var g = 0;
 var b = 0;
+var toggle;
 
 //variables added by me
 var autoJumpTimer = 0;
@@ -740,9 +741,11 @@ class Player {
   
     shoot(){
       if(player.downHeld || player.upHeld){
-        var toggle = true;
-      }else{}
-      if(player.facingRight && ){
+        toggle = true;
+      }else{
+        toggle = false;
+      }
+      if(player.facingRight && !toggle){
         let oneBullet = new bullet(bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }else{

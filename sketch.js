@@ -437,8 +437,11 @@ function keyReleased() {
         case RIGHT_ARROW:
             player.rightHeld = false;
             break;
+        case UP_ARROW:
+            player.upHeld = false;
+            break;
         case DOWN_ARROW:
-            //squat()
+            player.downHeld = false;
             break;
     }
 }
