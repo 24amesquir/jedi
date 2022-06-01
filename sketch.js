@@ -53,7 +53,7 @@ let quickJump = true;
 var shoot = 0;
 var reload = false;
 var shooting = false;
-
+var currentTime;
 
 
 
@@ -334,6 +334,9 @@ function keyPressed() {
               }
             break;
       case 'L':
+        document.body.style.zoom = 1;
+        const newDate = new Date();
+        currentTime = newDate.getTime();
         creatingLines = true;
         showingLines = false;
         document.getElementsByTagName('input')[0].style.display = 'none';
@@ -358,7 +361,7 @@ function keyPressed() {
         break;
       case 13:
         if(creatingLines){
-          document.body.innerHTML += `<p>Cool you made ${lines.length} lines and took ${sec}</p><center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
+          document.body.innerHTML += `<p>Cool you made ${lines.length} lines and took ${seconds()} seconds. :O</p><center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
         }
     }
 
@@ -367,6 +370,8 @@ replayingBestPlayer = false;
 cloneOfBestPlayer = null;
 
 
+
+function seconds(){var newDate = new Date();(newDate.getTime() - currentTime)/1000}
 
 function keyReleased() {
 
