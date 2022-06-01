@@ -287,12 +287,14 @@ function showLines() {
 function outputLines() {
   lmao='';
   for(var i=0;i<lines.length;i++){
+    lmao = lmao + `levels.push(temp([`
     if(i!=lines.length){
         var lmao = lmao + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}],\n`
       }else{
         var lmao = lmao + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}]\n`
       }
   };
+  lmao = lmao + `]));`
   return lmao
 }
 
