@@ -1,84 +1,26 @@
 let levels = []
 
 function setupLevels() {
-    let tempLevel = new Level();
-    tempLevel.lines.push(new Line(20, 0, 20, 760))
-tempLevel.lines.push(new Line(20, 760, 120, 880))
-tempLevel.lines.push(new Line(120, 880, 1180, 880))
-tempLevel.lines.push(new Line(1180, 0, 1180, 880))
-tempLevel.lines.push(new Line(180, 660, 300, 660))
-tempLevel.lines.push(new Line(300, 580, 300, 660))
-tempLevel.lines.push(new Line(300, 580, 180, 660))
-tempLevel.lines.push(new Line(180, 660, 180, 880))
-tempLevel.lines.push(new Line(240, 660, 240, 880))
-tempLevel.lines.push(new Line(440, 620, 440, 640))
-tempLevel.lines.push(new Line(440, 640, 460, 640))
-tempLevel.lines.push(new Line(460, 620, 460, 640))
-tempLevel.lines.push(new Line(440, 620, 460, 620))
-tempLevel.lines.push(new Line(680, 340, 680, 480))
-tempLevel.lines.push(new Line(680, 480, 760, 480))
-tempLevel.lines.push(new Line(760, 340, 760, 480))
-tempLevel.lines.push(new Line(680, 340, 760, 340))
-tempLevel.lines.push(new Line(580, 480, 680, 480))
-tempLevel.lines.push(new Line(580, 460, 580, 480))
-tempLevel.lines.push(new Line(580, 460, 680, 460))
-tempLevel.lines.push(new Line(980, 80, 980, 880))
-tempLevel.lines.push(new Line(980, 80, 1180, 80))
-tempLevel.lines.push(new Line(720, 700, 800, 700))
-tempLevel.lines.push(new Line(720, 680, 720, 700))
-tempLevel.lines.push(new Line(720, 680, 800, 680))
-tempLevel.lines.push(new Line(800, 680, 800, 700))
-tempLevel.lines.push(new Line(760, 460, 780, 460))
-tempLevel.lines.push(new Line(780, 460, 780, 480))
-tempLevel.lines.push(new Line(760, 480, 780, 480))
-tempLevel.lines.push(new Line(180, 140, 180, 200))
-tempLevel.lines.push(new Line(180, 200, 240, 200))
-tempLevel.lines.push(new Line(240, 140, 240, 200))
-tempLevel.lines.push(new Line(180, 140, 240, 140))
-tempLevel.lines.push(new Line(160, 400, 160, 440))
-tempLevel.lines.push(new Line(160, 440, 320, 440))
-tempLevel.lines.push(new Line(320, 400, 320, 440))
-tempLevel.lines.push(new Line(160, 400, 320, 400))
-tempLevel.lines.push(new Line(160, 200, 180, 200))
-tempLevel.lines.push(new Line(160, 180, 160, 200))
-tempLevel.lines.push(new Line(160, 180, 180, 180))
-tempLevel.lines.push(new Line(540, 820, 540, 840))
-tempLevel.lines.push(new Line(540, 840, 560, 840))
-tempLevel.lines.push(new Line(560, 820, 560, 840))
-tempLevel.lines.push(new Line(540, 820, 560, 820))
-tempLevel.lines.push(new Line(400, 120, 400, 300))
-tempLevel.lines.push(new Line(400, 300, 420, 300))
-tempLevel.lines.push(new Line(420, 120, 420, 300))
-tempLevel.lines.push(new Line(400, 120, 420, 120))
-tempLevel.lines.push(new Line(840, 80, 840, 140))
-tempLevel.lines.push(new Line(840, 140, 900, 140))
-tempLevel.lines.push(new Line(900, 120, 900, 140))
-tempLevel.lines.push(new Line(860, 120, 900, 120))
-tempLevel.lines.push(new Line(860, 80, 860, 120))
-tempLevel.lines.push(new Line(840, 80, 860, 80))
-tempLevel.lines.push(new Line(880, 460, 880, 600))
-tempLevel.lines.push(new Line(880, 600, 900, 600))
-tempLevel.lines.push(new Line(900, 460, 900, 600))
-tempLevel.lines.push(new Line(880, 460, 900, 460))
-    levels.push(temp([[20, 0, 20, 880],
-[20, 880, 1180, 880],
-[1180, 0, 1180, 880],
-[200, 880, 20, 680],
-[200, 660, 200, 880],
-[200, 660, 220, 640],
-[220, 640, 220, 880],
-[220, 640, 620, 640],
-[620, 640, 620, 660],
-[220, 660, 620, 660],
-[380, 480, 460, 480],
-[460, 440, 460, 480],
-[380, 440, 460, 440],
-[380, 440, 380, 480],
-[260, 340, 260, 440],
-[260, 440, 280, 440],
-[280, 340, 280, 440],
-[260, 340, 280, 340]]
-));
+    levels.push(temp(
+      [[20, 0, 20, 880],
+      [20, 880, 1180, 880],
+      [1180, 0, 1180, 880],
+      [200, 880, 20, 680],
+      [200, 660, 200, 880],
+      [200, 660, 220, 640],
+      [220, 640, 220, 880],
+      [220, 640, 620, 640],
+      [620, 640, 620, 660],
+      [220, 660, 620, 660],
+      [380, 480, 460, 480],
+      [460, 440, 460, 480],
+      [380, 440, 460, 440],
+      [380, 440, 380, 480],
+      [260, 340, 260, 440],
+      [260, 440, 280, 440],
+      [280, 340, 280, 440],
+      [260, 340, 280, 340]]
+    ));
     levels.push(
       temp([
         [20, 0, 20, 200],

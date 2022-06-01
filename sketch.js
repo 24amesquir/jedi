@@ -336,13 +336,10 @@ function keyPressed() {
               }
             break;
       case 'L':
-        document.body.style.zoom = 1;
-        const newDate = new Date();
-        currentTime = newDate.getTime();
-        creatingLines = true;
-        showingLines = false;
-        document.getElementsByTagName('input')[0].style.display = 'none';
-        colored = false;
+        L()
+      case 'E':
+        L()
+        for()
     }
 
     switch (keyCode) {
@@ -466,6 +463,15 @@ function mouseClicked() {
 
     }
     print("levels[" + player.currentLevelNo + "].coins.push(new Coin( " + floor(mouseX) + "," + floor(mouseY - 50) + ' , "progress" ));');
+}
+function L(){
+          document.body.style.zoom = 1;
+        const newDate = new Date();
+        currentTime = newDate.getTime();
+        creatingLines = true;
+        showingLines = false;
+        document.getElementsByTagName('input')[0].style.display = 'none';
+        colored = false;
 }
 
 //todo
