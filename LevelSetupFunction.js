@@ -85,7 +85,7 @@ tempLevel.lines.push(new Line(880, 460, 900, 460))
     tempLevel.lines.push(new Line(300, 420, 480, 420));
     tempLevel.lines.push(new Line(480, 420, 480, 260));
     tempLevel.lines.push(new Line(480, 260, 300, 260));
-    levels.push(tempLevel);
+    levels.push(temp());
     tempLevel = new Level();
     tempLevel.lines.push(new Line(20, 0, 20, 240));
     tempLevel.lines.push(new Line(20, 240, 160, 240));
@@ -1788,7 +1788,7 @@ tempLevel.lines.push(new Line(880, 460, 900, 460))
 
 }
 
-/*var l = [[20, 0, 20, 760],[20, 760, 120, 880],[120, 880, 1180, 880]] 
+var l = [[20, 0, 20, 760],[20, 760, 120, 880],[120, 880, 1180, 880]] 
 function temp(cors){
   let testLevel = new Level();
   for(var i = 0;i<cors.length;i++){
@@ -1798,7 +1798,86 @@ function temp(cors){
   return testLevel
 }
 
-function setupLevels(){
+/*function setupLevels(){
   levels.push(temp(levels[i]));
-}*/
+for (let i = 0; i < levels.length; i++) {
+        levels[i].levelImage = levelImages[i];
+        if ((i >= 25 && i <= 31)) {
+            levels[i].isBlizzardLevel = true;
+        }
+        if ((i >= 36 && i <= 38)) {
+            levels[i].isIceLevel = true;
+        }
+    }
 
+    // levels[0].coins.push(new Coin(100,100));
+    // levels[0].coins.push(new Coin( 198,449));
+    // levels[0].coins.push(new Coin( 1012,456));
+    // levels[0].coins.push(new Coin( 598,96));
+    // levels[0].coins.push(new Coin( 318,514));
+
+    // levels[0].coins.push(new Coin( 882,462));
+    // levels[0].coins.push(new Coin( 881,820));
+    // levels[0].coins.push(new Coin( 312,817));
+    // levels[0].coins.push(new Coin(x,y));
+
+
+    // levels[0].coins.push(new Coin( 1061,653));
+    levels[4].coins.push(new Coin(143, 160));
+    levels[5].coins.push(new Coin(801, 140));
+    levels[6].coins.push(new Coin(419, 541));
+    levels[8].coins.push(new Coin(780, 459));
+    levels[16].coins.push(new Coin(650, 570));
+    levels[16].coins.push(new Coin(195, 339));
+    levels[17].coins.push(new Coin(722, 648));
+    levels[17].coins.push(new Coin(1184, 781));
+    levels[17].coins.push(new Coin(1077, 297));
+    levels[24].coins.push(new Coin(971, 514));
+    levels[37].coins.push(new Coin(158, 666));
+    levels[36].coins.push(new Coin(721, 187));
+    levels[37].coins.push(new Coin(1042, 151));
+    levels[42].coins.push(new Coin(986, 306));
+
+    // levels[0].coins.push(new Coin( 595,30 , "progress" ));
+
+
+    levels[1].coins.push(new Coin( 143,148 , "progress" ));
+    levels[1].coins.push(new Coin( 155,142 , "progress" ));
+    levels[1].coins.push(new Coin( 65,148 , "progress" ));
+
+    levels[2].coins.push(new Coin( 125,187 , "progress" ));
+    levels[2].coins.push(new Coin( 51,183 , "progress" ));
+    levels[3].coins.push(new Coin( 843,125 , "progress" ));
+    levels[3].coins.push(new Coin( 411,170 , "progress" ));
+    levels[4].coins.push(new Coin( 137,173 , "progress" ));
+    levels[5].coins.push(new Coin( 1122,65 , "progress" ));
+    levels[5].coins.push(new Coin( 1121,151 , "progress" ));
+    levels[5].coins.push(new Coin( 1101,92 , "progress" ));
+    levels[6].coins.push(new Coin( 349,74 , "progress" ));
+    levels[7].coins.push(new Coin( 154,293 , "progress" ));
+    levels[8].coins.push(new Coin( 602,182 , "progress" ));
+    levels[12].coins.push(new Coin( 1135,37 , "progress" ));
+    levels[13].coins.push(new Coin( 665,193 , "progress" ));
+    levels[13].coins.push(new Coin( 587,194 , "progress" ));
+    levels[17].coins.push(new Coin( 975,147 , "progress" ));
+    levels[22].coins.push(new Coin( 1139,111 , "progress" ));
+    levels[36].coins.push(new Coin( 686,205 , "progress" ));
+    levels[37].coins.push(new Coin( 1005,181 , "progress" ));
+    levels[39].coins.push(new Coin( 365,187 , "progress" ));
+
+    levels[1].hasProgressionCoins = true;
+    levels[2].hasProgressionCoins = true;
+    levels[3].hasProgressionCoins = true;
+    levels[4].hasProgressionCoins = true;
+    levels[5].hasProgressionCoins = true;
+    levels[6].hasProgressionCoins = true;
+    levels[7].hasProgressionCoins = true;
+    levels[8].hasProgressionCoins = true;
+    levels[12].hasProgressionCoins = true;
+    levels[13].hasProgressionCoins = true;
+    levels[17].hasProgressionCoins = true;
+    levels[22].hasProgressionCoins = true;
+    levels[36].hasProgressionCoins = true;
+    levels[37].hasProgressionCoins = true;
+    levels[39].hasProgressionCoins = true;
+}*/
