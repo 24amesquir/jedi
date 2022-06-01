@@ -61,31 +61,32 @@ tempLevel.lines.push(new Line(880, 600, 900, 600))
 tempLevel.lines.push(new Line(900, 460, 900, 600))
 tempLevel.lines.push(new Line(880, 460, 900, 460))
     levels.push(tempLevel);
-
-    tempLevel = new Level();
-    tempLevel.lines.push(new Line(20, 0, 20, 200));
-    tempLevel.lines.push(new Line(20, 200, 200, 200));
-    tempLevel.lines.push(new Line(200, 200, 200, 420));
-    tempLevel.lines.push(new Line(200, 420, 20, 420));
-    tempLevel.lines.push(new Line(20, 420, 20, 900));
-    tempLevel.lines.push(new Line(1180, 900, 1180, 580));
-    tempLevel.lines.push(new Line(1180, 580, 1020, 580));
-    tempLevel.lines.push(new Line(1020, 580, 1020, 500));
-    tempLevel.lines.push(new Line(1020, 500, 1180, 500));
-    tempLevel.lines.push(new Line(1180, 500, 1180, 0));
-    tempLevel.lines.push(new Line(740, 740, 980, 740));
-    tempLevel.lines.push(new Line(980, 740, 980, 820));
-    tempLevel.lines.push(new Line(980, 820, 740, 820));
-    tempLevel.lines.push(new Line(740, 820, 740, 740));
-    tempLevel.lines.push(new Line(640, 500, 640, 580));
-    tempLevel.lines.push(new Line(640, 580, 820, 580));
-    tempLevel.lines.push(new Line(820, 580, 820, 500));
-    tempLevel.lines.push(new Line(820, 500, 640, 500));
-    tempLevel.lines.push(new Line(300, 260, 300, 420));
-    tempLevel.lines.push(new Line(300, 420, 480, 420));
-    tempLevel.lines.push(new Line(480, 420, 480, 260));
-    tempLevel.lines.push(new Line(480, 260, 300, 260));
-    levels.push(temp());
+    levels.push(
+      temp([
+        [20, 0, 20, 200],
+        [20, 200, 200, 200],
+        [200, 200, 200, 420],
+        [200, 420, 20, 420],
+        [20, 420, 20, 900],
+        [1180, 900, 1180, 580],
+        [1180, 580, 1020, 580],
+        [1020, 580, 1020, 500],
+        [1020, 500, 1180, 500],
+        [1180, 500, 1180, 0],
+        [740, 740, 980, 740],
+        [980, 740, 980, 820],
+        [980, 820, 740, 820],
+        [740, 820, 740, 740],
+        [640, 500, 640, 580],
+        [640, 580, 820, 580],
+        [820, 580, 820, 500],
+        [820, 500, 640, 500],
+        [300, 260, 300, 420],
+        [300, 420, 480, 420],
+        [480, 420, 480, 260],
+        [480, 260, 300, 260],
+      ])
+    );
     tempLevel = new Level();
     tempLevel.lines.push(new Line(20, 0, 20, 240));
     tempLevel.lines.push(new Line(20, 240, 160, 240));

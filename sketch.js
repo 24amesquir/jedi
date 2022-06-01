@@ -287,7 +287,11 @@ function showLines() {
 function outputLines() {
   lmao='';
   for(var i=0;i<lines.length;i++){
-    var lmao = lmao + `tempLevel.lines.push(new Line(${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}))\n`
+    if(i!=lines.length){
+        var lmao = lmao + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}],\n`
+      }else{
+        var lmao = lmao + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}]\n`
+      }
   };
   return lmao
 }
@@ -354,7 +358,7 @@ function keyPressed() {
         break;
       case 13:
         if(creatingLines){
-          document.body.innerHTML += `<center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
+          document.body.innerHTML += `<p>Cool you made ${lines.length} lines and took ${sec}</p><center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
         }
     }
 
