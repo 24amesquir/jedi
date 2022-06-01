@@ -385,6 +385,10 @@ function keyReleased() {
               player.Jump()
               minJumpSpeed = 5;
             break;
+        case 'U':
+              if(creatingLines) {
+                lines.pop()
+              }
         case 'R':
             if (creatingLines) {
                 lines = [];
