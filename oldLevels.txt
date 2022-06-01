@@ -1,3 +1,5 @@
+let levels = []
+
 function setupLevels() {
     let tempLevel = new Level();
     tempLevel.lines.push(new Line(20, 0, 20, 760))
