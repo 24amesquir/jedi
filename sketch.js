@@ -339,7 +339,9 @@ function keyPressed() {
         L()
       case 'E':
         L()
-        for()
+        for(var i = 0;i<levels[levelNumber].lines.length;i++){
+          lines.push(levels[levelNumber].lines[i])
+        }
     }
 
     switch (keyCode) {
@@ -376,14 +378,12 @@ function keyReleased() {
 
     switch (key) {
         case 'Z':
-            if (!creatingLines) {
-                if(quickJump){
-                  minJumpSpeed = 8;
-                }
-                player.jumpHeld = false
-                player.Jump()
-                minJumpSpeed = 5;
-            }
+              if(quickJump){
+                minJumpSpeed = 8;
+              }
+              player.jumpHeld = false
+              player.Jump()
+              minJumpSpeed = 5;
             break;
         case 'R':
             if (creatingLines) {
