@@ -298,6 +298,9 @@ function setupCanvas() {
     canvas.parent('canvas');
     width = canvas.width;
     height = canvas.height - 50;
+    if(screen.height<950){
+       document.body.style.zoom = "77.5%";//dosen't work on firefox
+    }
 }
 
 
