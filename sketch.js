@@ -188,7 +188,6 @@ function draw() {
         }
 
     }else{
-
         if (population.AllPlayersFinished()) {
             population.NaturalSelection();
             if (population.gen % increaseActionsEveryXGenerations === 0) {
@@ -214,7 +213,6 @@ function draw() {
     if (frameCount % 15 === 0) {
         previousFrameRate = floor(getFrameRate())
     }
-
 
     pop();
 
