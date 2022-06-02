@@ -393,6 +393,7 @@ function keyReleased() {
               if(creatingLines) {
                 lines.pop()
               }
+              break;
         case 'R':
             if (creatingLines) {
                 lines = [];
@@ -421,11 +422,13 @@ function keyReleased() {
                 mousePos1 = null;
                 mousePos2 = null;
             }
+        break;
       case 'X':
         shooting = false;
         for(var i = 0;i<=shoot;i++){
           clearInterval(i)
         }
+        break;
     }
 
     switch (keyCode) {

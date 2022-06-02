@@ -867,7 +867,7 @@ class Player {
     }
 
     GetImageToUseBasedOnState() {
-        if (floor(getFrameRate())) return idleImage
+        if (!testingSinglePlayer) return idleImage
         if (this.jumpHeld && this.isOnGround) return squatImage;
         if (this.hasFallen) return fallenImage;
         if (this.hasBumped) return oofImage;
