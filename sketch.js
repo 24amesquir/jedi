@@ -366,10 +366,15 @@ function keyPressed() {
         break;
       case 13:
         if(creatingLines){
-          document.body.innerHTML += `<p>Cool you made ${lines.length} lines and took ${seconds()} seconds. :O</p><center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
+          document.body.innerHTML += `<p>Cool you made ${lines.length} lines and took ${seconds()} seconds. You also have ${checkUnstableLines(lines)} lines that aren't stable (because of the angle they are at) :O</p><center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
         }
     }
 
+}
+function checkUnstableLines(pointes){
+  for(var i=0;i<pointes.length;i++){
+    if(Math.absolute(pointes[i].x1-pointes[i].x2)==Math.absolute(pointes[i].y1-pointes[i].y2)){return ''}
+  }
 }
 replayingBestPlayer = false;
 cloneOfBestPlayer = null;

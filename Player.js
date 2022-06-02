@@ -977,7 +977,7 @@ class Player {
         this.currentPos.y -= 1;
         return false;
     }
-
+    
     IsPlayerOnDiagonal(currentLines) {
         this.currentPos.y += 5;
         for (let i = 0; i < currentLines.length; i++) {
@@ -1339,7 +1339,7 @@ class Player {
             }
         }
     }
-    music(songNumber){
+    /*music(songNumber){
       if(songNumber < 5){
         //songNumber = 0
         return
@@ -1351,14 +1351,10 @@ class Player {
         songNumber = 3
       }
       if(song){
-        console.log(player.getTitle(currentSong.src))
         if(player.getTitle(currentSong.src) == player.getTitle(songs[songNumber])){
-          console.log('same song so no change')
           return
         }else{
-            console.log(`a new song: ${player.getTitle(songs[songNumber])} so it changed and paused the old one ${player.getTitle(currentSong.src)}`)
             fade(currentSong)
-            console.log(player.getTitle(currentSong.src))
         }
       }
       currentSong = new Audio(songs[songNumber])
@@ -1394,7 +1390,7 @@ class Player {
             }
         }
 
-    }
+    }*/
 }
 
 function AreLinesColliding(x1, y1, x2, y2, x3, y3, x4, y4) {
