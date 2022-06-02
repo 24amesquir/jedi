@@ -374,7 +374,7 @@ function keyPressed() {
 function checkUnstableLines(pointes){
   for(var i=0;i<pointes.length;i++){
     var unstable = 0;
-    if(!Math.absolute(pointes[i].x1-pointes[i].x2)==Math.absolute(pointes[i].y1-pointes[i].y2/*a diagonal line*/ || !pointes[i].x1 == pointes[i].x2 || !pointes[i].y1 == pointes[i].y2)){
+    if(!Math.abs(pointes[i].x1-pointes[i].x2)==Math.abs(pointes[i].y1-pointes[i].y2/*a diagonal line*/ || !pointes[i].x1 == pointes[i].x2 || !pointes[i].y1 == pointes[i].y2)){
       unstable+=1
     }
     if(unstable>0) return unstable
@@ -489,7 +489,7 @@ function mouseClicked() {
     print("levels[" + player.currentLevelNo + "].coins.push(new Coin( " + floor(mouseX) + "," + floor(mouseY - 50) + ' , "progress" ));');
 }
 function L(){
-          document.body.style.zoom = 1;
+        document.body.style.zoom = 1;
         const newDate = new Date();
         currentTime = newDate.getTime();
         creatingLines = true;
