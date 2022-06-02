@@ -219,13 +219,13 @@ class Player {
 
 
         this.parentReachedBestLevelAtActionNo = 0;
-        this.numberOfCoinsPickedUp = 0;
-        this.coinsPickedUpIndexes = [];
+        //this.numberOfCoinsPickedUp = 0;
+        //this.coinsPickedUpIndexes = [];
 
         this.maxCollisionChecks = 20;
         this.currentNumberOfCollisionChecks = 0;
 
-        this.progressionCoinPickedUp = false;
+        //this.progressionCoinPickedUp = false;
 
     }
 
@@ -298,7 +298,7 @@ class Player {
         // current best fitness max just including height is 640,000, getting a coin has to be the most important thing so
         let coinValue = 500000;
         let heightThisLevel = (this.bestHeightReached - (height * this.bestLevelReached));
-        this.fitness = heightThisLevel * heightThisLevel + coinValue * this.numberOfCoinsPickedUp;
+        this.fitness = heightThisLevel * heightThisLevel// + coinValue * this.numberOfCoinsPickedUp;
     }
 
     Update() {
@@ -319,7 +319,7 @@ class Player {
         this.CheckCollisions(currentLines)
         this.UpdateJumpTimer()
         this.CheckForLevelChange();
-        this.CheckForCoinCollisions();
+        //this.CheckForCoinCollisions();
 
         if (this.getNewPlayerStateAtEndOfUpdate) {
             if (this.currentLevelNo !== 37) {
@@ -1186,7 +1186,7 @@ class Player {
         if (this.currentPos.y < -this.height) {
             //we are at the top of the screen
             this.currentLevelNo += 1;
-            player.music(this.currentLevelNo);
+            //player.music(this.currentLevelNo);
             this.currentPos.y += height;
 
 
@@ -1307,14 +1307,14 @@ class Player {
                 this.getNewPlayerStateAtEndOfUpdate = true;
 
 
-                //setup coins
+                /*setup coins
                 this.numberOfCoinsPickedUp = 0;
                 this.progressionCoinPickedUp = false;
                 if(!levels[this.currentLevelNo].hasProgressionCoins){
                     this.progressionCoinPickedUp = true;
 
                 }
-                this.coinsPickedUpIndexes = [];
+                this.coinsPickedUpIndexes = [];*/
 
 
             }

@@ -373,7 +373,12 @@ function keyPressed() {
 }
 function checkUnstableLines(pointes){
   for(var i=0;i<pointes.length;i++){
-    if(Math.absolute(pointes[i].x1-pointes[i].x2)==Math.absolute(pointes[i].y1-pointes[i].y2)){return ''}
+    var unstable = 0;
+    if(!Math.absolute(pointes[i].x1-pointes[i].x2)==Math.absolute(pointes[i].y1-pointes[i].y2/*a diagonal line*/ || !pointes[i].x1 == pointes[i].x2 || !pointes[i].y1 == pointes[i].y2)){
+      unstable+=1
+    }
+    if(unstable>0) return unstable
+    return 0
   }
 }
 replayingBestPlayer = false;
