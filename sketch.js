@@ -497,6 +497,15 @@ function L(){
         document.getElementsByTagName('input')[0].style.display = 'none';
         colored = false;
 }
+function rebuild(lines){
+  var newLines = []
+  for(var i=0;i<lines.length;i++){
+    lines.split('\n')
+    var line = lines[i]
+    newLines.push(line.substring(line.lastIndexOf('(')+1,line.lastIndexOf(')')-1))
+  }
+  return newLines
+}
 
 //todo
 // things to do
