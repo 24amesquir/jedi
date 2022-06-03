@@ -497,13 +497,18 @@ function L(){
         document.getElementsByTagName('input')[0].style.display = 'none';
         colored = false;
 }
-function rebuild(lines){
+function rebuild(points){
   var newLines = []
-  for(var i=0;i<lines.length;i++){
-    lines.split('\n')
-    var line = lines[i]
-    newLines.push(line.substring(line.lastIndexOf('(')+1,line.lastIndexOf(')')-1))
+  var points = points.split('\n')
+  for(var i=0;i<points.length;i++){
+    var point = points[i]
+    newLines.push(point.substring(point.lastIndexOf('(')+1,point.lastIndexOf(')')-1))
   }
+  var newPoint = 'levels.push(temp([';
+  for(var i=0;i<rebuild(points).length;i++){
+    newPoint = newPoint + rebuild(points)[i]
+  }
+  var newPoint = newPoint + ']));'
   return newLines
 }
 
