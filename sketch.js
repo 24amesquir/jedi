@@ -506,7 +506,7 @@ function rebuild(points){
   }
   return newLines;
 }
-function rebuilt(LINES){
+function rebuilt(points){
   var newPoint = 'levels.push(temp([';
   for(var i=0;i<rebuild(points).length;i++){
     if(i == rebuild(points).length-1){    newPoint = newPoint + `[${rebuild(points)[i]}]`}else{
@@ -514,6 +514,7 @@ function rebuilt(LINES){
     }
   }
   var newPoint = newPoint + ']));';
+  return newPoint;
 }
 
 //todo
