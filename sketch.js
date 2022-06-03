@@ -499,17 +499,21 @@ function L(){
 }
 function rebuild(points){
   var newLines = []
-  var points = points.split('\n')
-  for(var i=0;i<points.length;i++){
-    var point = points[i]
-    newLines.push(point.substring(point.lastIndexOf('(')+1,point.lastIndexOf(')')-1))
+  var pointsArray = points.split('\n');
+  for(var i=0;i<pointsArray.length;i++){
+    var poi = pointsArray[i]
+    newLines.push(poi.substring(poi.lastIndexOf('(')+1,poi.lastIndexOf(')')-1))
   }
+  return newLines;
+}
+function rebuilt(LINES){
   var newPoint = 'levels.push(temp([';
   for(var i=0;i<rebuild(points).length;i++){
-    newPoint = newPoint + rebuild(points)[i]
+    if(i == rebuild(points).length-1){    newPoint = newPoint + `[${rebuild(points)[i]}]`}else{
+      newPoint = newPoint + `[${rebuild(points)[i]}],`
+    }
   }
-  var newPoint = newPoint + ']));'
-  return newLines
+  var newPoint = newPoint + ']));';
 }
 
 //todo
