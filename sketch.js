@@ -462,7 +462,6 @@ let mousePos1 = null;
 let mousePos2 = null;
 let linesString = "";
 
-
 function mouseClicked() {
     if (creatingLines) {
         let snappedX = mouseX - mouseX % 20;
@@ -496,6 +495,11 @@ function L(){
         showingLines = false;
         document.getElementsByTagName('input')[0].style.display = 'none';
         colored = false;
+  document.getElementById("defaultCanvas0").addEventListener('contextmenu', function(ev) {
+    ev.preventDefault();
+    getLine()
+    return false;
+}, false);
 }
 function rebuild(points){
   var newLines = []
@@ -516,6 +520,20 @@ function rebuilt(points){
   var newPoint = newPoint + ']));';
   return newPoint;
 }
+
+var approX, approY;
+function getLine(){
+for (var i = 0; i < levels[0].lines.length; i++) {
+  approX = mouseX;
+  approY = mouseY;
+  if (
+    Math.abs((levels[0].lines[i].x1 + levels[0].lines[i].x2) / 2 - approX) <
+      10 ||
+    Math.abs((levels[0].lines[i].y1 + levels[0].lines[i].y2) / 2 - approY) < 10
+  ) {
+    console.log(i);
+  }
+}}
 
 //todo
 // things to do
