@@ -552,15 +552,17 @@ function addPlayer(){
 
 function testMulti() {
   multiplayer = true;
+  for(var i;i<playersOnline.length;i++){
   setInterval(function () {
     if (Math.random() > 0.5 || Math.random() > 0.5) {
       if (Math.random() > 0.5) {
         var value = -10 + Math.random() * 20;
-        if(value != Math.abs(value)){playersOnline[0].facingRight = false}else{playersOnline[0].facingRight = true}
-        playersOnline[0].currentPos.x += value;
+        if(value != Math.abs(value)){playersOnline[i].facingRight = false}else{playersOnline[i].facingRight = true}
+        playersOnline[i].currentPos.x += value;
       }
     }
   }, 40);
+  }
 }
 
 //todo

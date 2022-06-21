@@ -12,13 +12,13 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
   users += 1;
-  socket.emit(`a user connected there is now ${users} users`);
+  io.emit('users',users);
   console.log(`a user connected there is now ${users} users`);
 
   socket.on('disconnect', function () {
 
       users = users - 1;
-      socket.emit(`a user disconnected there is now ${users} users`);
+      io.emit('users',users);
       console.log(`a user disconnected there is now ${users} users`);
 
   });
