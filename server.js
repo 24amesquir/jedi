@@ -23,6 +23,10 @@ io.on('connection', (socket) => {
 
   });
 });
+let userPos = [];
+io.on('update', (arg) => {
+  console.log(arg)
+})
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
