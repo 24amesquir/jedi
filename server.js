@@ -23,8 +23,12 @@ io.on('connection', (socket) => {
 
   });
 });
+
 let userPos = [];
-io.on('update', (arg) => {
+io.httpServer.on('listening', function () {
+  console.log('listening on port', io.httpServer.address().port)
+})
+io.on('update',arg=>{
   console.log(arg)
 })
 
@@ -66,6 +70,4 @@ app.use('/libraries', express.static(__dirname + '/libraries'));
 app.use('/images', express.static(__dirname + '/images'));
 app.use('/sounds', express.static(__dirname + '/sounds'));
 
-server.listen(5000, () => {
-  console.log('listening on *:5000');
-});
+server.listen(5000)

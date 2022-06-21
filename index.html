@@ -18,10 +18,18 @@
   	<script src="bullet.js"></script>
     <script>
       var socket = io();
+      var total = 0;
       socket.on("users", (arg) => {
-        console.log(arg);
+        console.log(arg-1);
         for(var i = 0;i<arg-1;i++){
           playersOnline.push(new Player())
+          total+=1;
+        }
+        if(arg-1<total){
+        for(var i = 0;i<arg-1;i++){
+          playersOnline.pop()
+          total-=1;
+        }
         }
       });
       //socket.emit('update',player.currentPos.toString())

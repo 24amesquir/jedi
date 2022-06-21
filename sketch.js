@@ -542,14 +542,6 @@ for (var i = 0; i < levels[0].lines.length; i++) {
   }
 }}
 
-function addPlayer(){
-    let player2 = new Player();
-    clone.brain = this.brain.clone();
-    clone.playerStateAtStartOfBestLevel = this.playerStateAtStartOfBestLevel.clone();
-    clone.brain.parentReachedBestLevelAtActionNo = this.bestLevelReachedOnActionNo;
-    return clone;
-}
-
 function testMulti() {
   multiplayer = true;
   for(var i;i<playersOnline.length;i++){
