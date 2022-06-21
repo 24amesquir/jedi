@@ -3,7 +3,7 @@ let height = 0;
 let canvas = null;
 
 let player = null;
-let playersOnline/* = [client.broadcast({count:count})]*/;
+let playersOnline = [/*client.broadcast({count:count})*/];
 let multiplayer = false;
 let lines = [];
 let backgroundImage = null;
@@ -107,7 +107,7 @@ function preload() {
 function setup() {
     setupCanvas();
     player = new Player();
-    player2 = new Player();
+    playersOnline.push(new Player());
     population = new Population(600);
     setupLevels();
     jumpSound.playMode('sustain');
@@ -178,10 +178,10 @@ function draw() {
         player.Show();
     if(multiplayer){
       for(var i = 0;i<playersOnline.length;i++){
-        playersOnline[i].Update();
-        playersOnline[i].Show();
+          playersOnline[i].Update()
+          playersOnline[i].Show();
       }
-    }
+      }
     } else if(replayingBestPlayer) {
         if(!cloneOfBestPlayer.hasFinishedInstructions){
             for (let i = 0; i < evolationSpeed; i++){
@@ -205,8 +205,6 @@ function draw() {
         }
         for (let i = 0; i < evolationSpeed; i++)
             population.Update()
-        // population.Update()
-        // population.Update()
         population.Show();
 
     }
@@ -551,6 +549,8 @@ function addPlayer(){
     clone.brain.parentReachedBestLevelAtActionNo = this.bestLevelReachedOnActionNo;
     return clone;
 }
+
+function testMulti(){}
 
 //todo
 // things to do
