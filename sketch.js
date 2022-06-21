@@ -535,6 +535,14 @@ for (var i = 0; i < levels[0].lines.length; i++) {
   }
 }}
 
+function addPlayer(){
+    let player2 = new Player();
+    clone.brain = this.brain.clone();
+    clone.playerStateAtStartOfBestLevel = this.playerStateAtStartOfBestLevel.clone();
+    clone.brain.parentReachedBestLevelAtActionNo = this.bestLevelReachedOnActionNo;
+    return clone;
+}
+
 //todo
 // things to do
 // - when a player lands in a new level, record the game state and start the next evolution at that point DONE
