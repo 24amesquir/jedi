@@ -2,6 +2,16 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', (socket) => {
+  console.log('a user connected');
+});
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
@@ -10,7 +20,7 @@ app.get('/Coin.js', (req, res) => {
   res.sendFile(__dirname + '/Coin.js');
 });
 app.get('/Level.js', (req, res) => {
-  res.sendFile('/Level.js');
+  res.sendFile(__dirname + '/Level.js');
 });
 app.get('/LevelSetupFunction.js', (req, res) => {
   res.sendFile(__dirname + '/LevelSetupFunction.js');
