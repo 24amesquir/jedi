@@ -3,6 +3,8 @@ let height = 0;
 let canvas = null;
 
 let player = null;
+let playersOnline/* = [client.broadcast({count:count})]*/;
+let multiplayer = false;
 let lines = [];
 let backgroundImage = null;
 var segmentCount = 24;
@@ -105,6 +107,7 @@ function preload() {
 function setup() {
     setupCanvas();
     player = new Player();
+    player2 = new Player();
     population = new Population(600);
     setupLevels();
     jumpSound.playMode('sustain');
@@ -173,6 +176,12 @@ function draw() {
         levels[player.currentLevelNo].show();
         player.Update();
         player.Show();
+    if(multiplayer){
+      for(var i = 0;i<playersOnline.length;i++){
+        playersOnline[i].Update();
+        playersOnline[i].Show();
+      }
+    }
     } else if(replayingBestPlayer) {
         if(!cloneOfBestPlayer.hasFinishedInstructions){
             for (let i = 0; i < evolationSpeed; i++){
