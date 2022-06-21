@@ -3,7 +3,7 @@ let height = 0;
 let canvas = null;
 
 let player = null;
-let playersOnline = [/*client.broadcast({count:count})*/];
+let playersOnline = [];
 let multiplayer = false;
 let lines = [];
 let backgroundImage = null;
@@ -107,7 +107,6 @@ function preload() {
 function setup() {
     setupCanvas();
     player = new Player();
-    playersOnline.push(new Player());
     population = new Population(600);
     setupLevels();
     jumpSound.playMode('sustain');
