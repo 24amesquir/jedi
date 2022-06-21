@@ -550,7 +550,18 @@ function addPlayer(){
     return clone;
 }
 
-function testMulti(){}
+function testMulti() {
+  multiplayer = true;
+  setInterval(function () {
+    if (Math.random() > 0.5 || Math.random() > 0.5) {
+      if (Math.random() > 0.5) {
+        var value = -10 + Math.random() * 20;
+        if(value != Math.abs(value)){playersOnline[0].facingRight = false}else{playersOnline[0].facingRight = true}
+        playersOnline[0].currentPos.x += value;
+      }
+    }
+  }, 40);
+}
 
 //todo
 // things to do

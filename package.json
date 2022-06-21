@@ -1,0 +1,11 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "important varibales and stuff    `player.currentLevelNo` --- returns the level starting at zero    `creatingLines` --- a boolean for the red line thing    `CheckForLevelChange` --- function for level changes  line 234 in sketch.js is key events",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": { "start": "node server.js" },
+  "author": "",
+  "license": "ISC"
+}
