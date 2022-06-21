@@ -4,7 +4,7 @@ let canvas = null;
 
 let player = null;
 let playersOnline = [];
-let multiplayer = false;
+let multiplayer = true;
 let lines = [];
 let backgroundImage = null;
 var segmentCount = 24;
