@@ -22,14 +22,14 @@ io.on('connection', (socket) => {
       console.log(`a user disconnected there is now ${users} users`);
 
   });
+  socket.on('update',arg=>{
+    console.log(arg)
+  })
 });
 
 let userPos = [];
 io.httpServer.on('listening', function () {
   console.log('listening on port', io.httpServer.address().port)
-})
-io.on('update',arg=>{
-  console.log(arg)
 })
 
 app.get('/', (req, res) => {

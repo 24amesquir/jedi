@@ -22,9 +22,9 @@
       socket.on("users", (arg) => {
         console.log(arg-1);
         for(var i = 0;i<arg-1;i++){
-          //if(!multiplayer){multiplayer = true}
           playersOnline.push(new Player())
           total+=1;
+          if(!multiplayer){multiplayer = true}
           console.log(total)
         }
         if(arg-1<total){

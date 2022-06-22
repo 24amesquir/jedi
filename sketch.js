@@ -54,7 +54,6 @@ let evolationSpeed = 1;
 let quickJump = true;
 var shoot = 0;
 var reload = false;
-var shooting = false;
 var currentTime;
 
 
@@ -322,7 +321,7 @@ function keyPressed() {
             setTimeout(function(){quickJump = false},1000)
             break;
         case 'X':
-            shooting = true;
+            player.shooting = true;
             if(!reload){
               player.shoot()
               reload = true;
@@ -440,7 +439,7 @@ function keyReleased() {
             }
         break;
       case 'X':
-        shooting = false;
+        player.shooting = false;
         for(var i = 0;i<=shoot;i++){
           clearInterval(i)
         }

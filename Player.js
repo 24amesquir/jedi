@@ -23,7 +23,6 @@ var colored = false;
 var r = 200;
 var g = 0;
 var b = 0;
-var toggle;
 
 //variables added by me
 var autoJumpTimer = 0;
@@ -225,7 +224,7 @@ class Player {
         this.maxCollisionChecks = 20;
         this.currentNumberOfCollisionChecks = 0;
 
-        //this.progressionCoinPickedUp = false;
+        this.shooting = false;
 
     }
 
@@ -741,11 +740,11 @@ class Player {
   
     shoot(){
       if(player.downHeld || player.upHeld){
-        toggle = true;
+        this.toggle = true;
       }else{
-        toggle = false;
+        this.toggle = false;
       }
-      if(player.facingRight && !toggle){
+      if(player.facingRight && !this.toggle){
         let oneBullet = new bullet(bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }else{
@@ -880,7 +879,7 @@ class Player {
 
         }
 
-        if(this.isOnGround && shooting) return shootImage;
+        if(this.isOnGround && this.shooting) return shootImage;
         if (this.isOnGround) return idleImage;
         return fallImage;
     }
