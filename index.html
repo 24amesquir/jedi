@@ -73,12 +73,15 @@
             if(settingUp){
               lmao = arg;
               play = playersOnline[lmao.index];
+              try{
               if(Math.floor(play.currentPos.x) != Math.floor(lmao.x)){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
               if(Math.floor(play.currentPos.y) != Math.floor(lmao.y)){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
               play.facingRight = lmao.facingRight;
               play.shooting = lmao.shooting;
-              play
               //play.jumpHeld = lmao.jumpHeld;
+              }catch(error){
+                  play = playersOnline[lmao.index];
+              }
             }
           },1000)
         }
