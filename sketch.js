@@ -29,6 +29,7 @@ let levelImages = [];
 let placingPlayer = false;
 let placingCoins = false;
 let playerPlaced = false;
+var ouput;
 
 let testingSinglePlayer = true;
 
@@ -233,17 +234,17 @@ function showLines() {
 }
 
 function outputLines() {
-  lmao='';
-  lmao = lmao + `levels.push(temp([`
+  output='';
+  output = output + `levels.push(temp([`
   for(var i=0;i<lines.length;i++){
     if(i!=lines.length){
-        var lmao = lmao + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}],\n`
+        var output = output + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}],\n`
       }else{
-        var lmao = lmao + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}]\n`
+        var output = output + `[${lines[i].x1}, ${lines[i].y1}, ${lines[i].x2}, ${lines[i].y2}]\n`
       }
   };
-  lmao = lmao + `]));`
-  return lmao
+  output = output + `]));`
+  return output
 }
 
 
@@ -253,7 +254,7 @@ function setupCanvas() {
     width = canvas.width;
     height = canvas.height - 50;
     if(screen.height<950){
-       document.body.style.zoom = "77.5%";//dosen't work on firefox
+       document.body.style.zoom = "50%";//change it back to 77.5%dosen't work on firefox
     }
 }
 
