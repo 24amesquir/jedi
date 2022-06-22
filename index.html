@@ -20,11 +20,11 @@
       var settingUp = false;
       var socket = io();
       var total = 0;
-      var indice;
+      var indice = false;
       socket.on("users", (arg) => {
         if(settingUp){
         console.log(arg-1);
-        indice = arg-1;
+        if(!indice) {indice = arg-1};
         for(var i = 0;i<arg-1;i++){
           playersOnline.push(new Player())
           total+=1;
@@ -39,15 +39,16 @@
         }
         }else{
           setTimeout(function(){
-            console.log(arg-1);
-            for(var i = 0;i<arg-1;i++){
+            console.log(arg);
+            if(!indice) {indice = arg-1};
+            for(var i = 0;i<arg;i++){
               playersOnline.push(new Player())
               settingUp = true;
               total+=1;
               if(!multiplayer){multiplayer = true}
               console.log(total)
             }
-            if(arg-1<total){
+            if(arg<total){
             for(var i = 0;i<arg-1;i++){
               playersOnline.pop()
               total-=1;
