@@ -40,17 +40,18 @@
             console.log(arg-1);
             for(var i = 0;i<arg-1;i++){
               playersOnline.push(new Player())
+              settingUp = true;
               total+=1;
               if(!multiplayer){multiplayer = true}
               console.log(total)
             }
-          if(arg-1<total){
-          for(var i = 0;i<arg-1;i++){
-            playersOnline.pop()
-            total-=1;
+            if(arg-1<total){
+            for(var i = 0;i<arg-1;i++){
+              playersOnline.pop()
+              total-=1;
+            }
           }
-        }
-          },500)
+        },1000)
         }
       });
       //socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
@@ -65,10 +66,12 @@
               if(window.onload)
               console.log(arg)
               lmao = arg;
-              playersOnline[arg.index].currentPos.x = parseInt(lmao.x);
-          },500)
+              if(Math.floor(playersOnline[lmao.index].currentPos.x) != Math.floor(lmao.x)){playersOnline[arg.index].currentPos.x = parseInt(lmao.x)}
+              if(Math.floor(playersOnline[lmao.index].currentPos.y) != Math.floor(lmao.y)){playersOnline[arg.index].currentPos.y = parseInt(lmao.y)}
+            }
+          },1000)
         }
-      })      
+      }) 
   </script>
     <style>
         body {

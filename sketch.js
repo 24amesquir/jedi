@@ -104,22 +104,15 @@ function preload() {
 
 
 function setup() {
-    settingUp = true;
-    setupCanvas();
-    player = new Player();
-    population = new Population(600);
-    setupLevels();
-    jumpSound.playMode('sustain');
-    fallSound.playMode('sustain');
-    bumpSound.playMode('sustain');
-    landSound.playMode('sustain');
-    shootSound.playMode('sustain');
-
-    // lines.push(new Line(200,height - 80,width - 200, height-80));
-    // lines.push(new Line(10,height - 500,200, height-500));
-    // lines.push(new Line(200,height - 100,200, height-500));
-
-
+  setupCanvas();
+  player = new Player();
+  population = new Population(600);
+  setupLevels();
+  jumpSound.playMode('sustain');
+  fallSound.playMode('sustain');
+  bumpSound.playMode('sustain');
+  landSound.playMode('sustain');
+  shootSound.playMode('sustain');
 }
 
 function drawMousePosition() {
