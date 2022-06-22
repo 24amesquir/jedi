@@ -17,6 +17,7 @@
     <script src="/socket.io/socket.io.js"></script>
   	<script src="bullet.js"></script>
     <script>
+      colored = true;
       var settingUp = false;
       var socket = io();
       var total = 0;
@@ -103,7 +104,7 @@
 <body style="margin:0;padding:0;overflow-x:hidden;">
 <center>
     <div id="canvas"></div>
-    <input style="width:60px;height:60px;border:0;outline:0;" type="color" onchange="printColor(event)" value="#ffffff" onload='this.value="#"+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);"' onclick="colored=true">
+    <input style="width:60px;height:60px;border:0;outline:0;" type="color" oninput="printColor(event)" value="#ffffff" onload='this.value="#"+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);"' onclick="colored=true">
   </center>
 </body>
 </html>
