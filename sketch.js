@@ -222,7 +222,7 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
-  if(keydown){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice})}
+  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight})}
 }
 
 let previousFrameRate = 60;

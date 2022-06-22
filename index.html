@@ -61,15 +61,18 @@
       socket.on("changePos", (arg) => {
         if(settingUp){
         lmao = arg;
-           if(Math.floor(playersOnline[lmao.index].currentPos.x) != Math.floor(parseInt(lmao.x))){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
-            if(Math.floor(playersOnline[lmao.index].currentPos.y) != Math.floor(parseInt(lmao.y))){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
+        play = playersOnline[lmao.index]
+       if(Math.floor(play.currentPos.x) != Math.floor(parseInt(lmao.x))){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
+          if(Math.floor(play.currentPos.y) != Math.floor(parseInt(lmao.y))){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
+          player.facingRight = lmao.facingRight
         }else{
           setTimeout(function(){
             if(settingUp){
               if(window.onload)
               lmao = arg;
-              if(Math.floor(playersOnline[lmao.index].currentPos.x) != Math.floor(lmao.x)){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
-              if(Math.floor(playersOnline[lmao.index].currentPos.y) != Math.floor(lmao.y)){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
+              if(Math.floor(play.currentPos.x) != Math.floor(lmao.x)){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
+              if(Math.floor(play.currentPos.y) != Math.floor(lmao.y)){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
+              player.facingRight = lmao.facingRight;
             }
           },1000)
         }
