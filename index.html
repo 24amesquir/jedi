@@ -79,6 +79,7 @@
               play.facingRight = lmao.facingRight;
               play.shooting = lmao.shooting;
               //play.jumpHeld = lmao.jumpHeld;
+                document.getElementsByTagName('input')[0].value = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
               }catch(error){
                   play = playersOnline[lmao.index];
               }
@@ -86,6 +87,10 @@
           },1000)
         }
       }) 
+                      function componentToHex(c) {
+                  var hex = c.toString(16);
+                  return hex.length == 1 ? "0" + hex : hex;
+                }
   </script>
     <style>
         body {
