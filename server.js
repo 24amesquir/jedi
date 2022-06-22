@@ -24,6 +24,7 @@ io.on('connection', (socket) => {
   });
   socket.on('update',arg=>{
     console.log(arg)
+    io.emit('changePos',arg)
   })
 });
 

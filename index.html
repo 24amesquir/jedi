@@ -34,7 +34,12 @@
         }
         }
       });
-      //socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b})
+      //socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
+      socket.on("changePos", (arg) => {
+        console.log(arg)
+        lmao = arg;
+        playersOnline[arg.index].currentPos.x = arg.x;
+      })      
   </script>
     <style>
         body {
