@@ -20,9 +20,9 @@ let bulletSpeed = .85;
 let bulletDropoff = .0125;
 let canDash = true;
 var colored = false;
-var r = 200;
-var g = 0;
-var b = 0;
+var r = Math.floor(Math.random()*25.5)*10+1;
+var g = Math.floor(Math.random()*25.5)*10+1;
+var b = Math.floor(Math.random()*25.5)*10+1;
 
 //variables added by me
 var autoJumpTimer = 0;
