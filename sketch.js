@@ -104,6 +104,7 @@ function preload() {
 
 
 function setup() {
+    settingUp = true;
     setupCanvas();
     player = new Player();
     population = new Population(600);
@@ -245,23 +246,7 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
-  if(!colorWheel){
-    return
-  }
-  
-  
-  colorMode(HSB, 360,width,height);
-  var angleStep = floor(360/segmentCount);
-  beginShape(TRIANGLE_FAN);
-    vertex(width/2,height/2);
-    for(var angle =0; angle <= 360; angle += angleStep){
-      var vx = width/2 + cos(radians(angle))* radius;
-      var vy = height/2 + sin(radians(angle))* radius;
-      vertex(vx, vy);
-      fill(angle, mouseX, mouseY);
-      stroke(angle,mouseX,mouseY);
-    }
-  endShape();
+  socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
 }
 
 let previousFrameRate = 60;
@@ -374,7 +359,6 @@ function keyPressed() {
           document.body.innerHTML += `<p>Cool you made ${lines.length} lines and took ${seconds()} seconds. You also have ${checkUnstableLines(lines)} lines that aren't stable (because of the angle they are at) :O</p><center><textarea style="width:100%;height:1080px;position:absolute;top:0;left:0;margin:0;padding:0;">${outputLines()}</textarea><center>`
         }
     }
-
 }
 function checkUnstableLines(pointes){
   for(var i=0;i<pointes.length;i++){

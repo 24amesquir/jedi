@@ -17,9 +17,11 @@
     <script src="/socket.io/socket.io.js"></script>
   	<script src="bullet.js"></script>
     <script>
+      var settingUp = false;
       var socket = io();
       var total = 0;
       socket.on("users", (arg) => {
+        if(settingUp){
         console.log(arg-1);
         for(var i = 0;i<arg-1;i++){
           playersOnline.push(new Player())
@@ -33,12 +35,39 @@
           total-=1;
         }
         }
+        }else{
+          setTimeout(function(){
+            console.log(arg-1);
+            for(var i = 0;i<arg-1;i++){
+              playersOnline.push(new Player())
+              total+=1;
+              if(!multiplayer){multiplayer = true}
+              console.log(total)
+            }
+          if(arg-1<total){
+          for(var i = 0;i<arg-1;i++){
+            playersOnline.pop()
+            total-=1;
+          }
+        }
+          },500)
+        }
       });
       //socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
       socket.on("changePos", (arg) => {
+        if(settingUp){
         console.log(arg)
         lmao = arg;
-        playersOnline[arg.index].currentPos.x = arg.x;
+        playersOnline[arg.index].currentPos.x = parseInt(lmao.x);
+        }else{
+          setTimeout(function(){
+            if(settingUp){
+              if(window.onload)
+              console.log(arg)
+              lmao = arg;
+              playersOnline[arg.index].currentPos.x = parseInt(lmao.x);
+          },500)
+        }
       })      
   </script>
     <style>
