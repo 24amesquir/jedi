@@ -64,8 +64,10 @@
         lmao = arg;
         play = playersOnline[lmao.index];
        if(Math.floor(play.currentPos.x) != Math.floor(parseInt(lmao.x))){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
-          if(Math.floor(play.currentPos.y) != Math.floor(parseInt(lmao.y))){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
-            playersOnline[lmao.index].facingRight = lmao.facingRight;
+          if(Math.floor(play.currentPos.y) != Math.floor(parseInt(lmao.y))){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}            
+          playersOnline[lmao.index].facingRight = lmao.facingRight;
+          play.shooting = lmao.shooting;
+          //play.jumpHeld = lmao.jumpHeld;
         }else{
           setTimeout(function(){
             if(settingUp){
@@ -73,7 +75,9 @@
               play = playersOnline[lmao.index];
               if(Math.floor(play.currentPos.x) != Math.floor(lmao.x)){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
               if(Math.floor(play.currentPos.y) != Math.floor(lmao.y)){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
-              playersOnline[lmao.index].facingRight = lmao.facingRight;
+              play.facingRight = lmao.facingRight;
+              play.shooting = lmao.shooting;
+              //play.jumpHeld = lmao.jumpHeld;
             }
           },1000)
         }

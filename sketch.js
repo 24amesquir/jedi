@@ -202,9 +202,12 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
-  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight});behind = true}
+  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting/*,'jumpHeld':player.jumpHeld*/});behind = true}
   if(behind){
-    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight})
+    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting/*,'jumpHeld':player.jumpHeld*/})
+  }
+  if(!player.currentSpeed.x > 0 || !player.currentSpeed.y > 0){
+    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting/*,'jumpHeld':player.jumpHeld*/})
     behind = false
   }
 }
