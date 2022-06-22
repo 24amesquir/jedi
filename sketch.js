@@ -171,26 +171,10 @@ function draw() {
             mutePlayers = true;
         }
 
-    }else{
-        if (population.AllPlayersFinished()) {
-            population.NaturalSelection();
-            if (population.gen % increaseActionsEveryXGenerations === 0) {
-                population.IncreasePlayerMoves(increaseActionsByAmount);
-            }
-        }
-        for (let i = 0; i < evolationSpeed; i++)
-            population.Update()
-        population.Show();
-
     }
-
 
     if (showingLines || creatingLines)
         showLines();
-
-    if (creatingLines)
-        drawMousePosition();
-
 
     if (frameCount % 15 === 0) {
         previousFrameRate = floor(getFrameRate())
@@ -201,14 +185,9 @@ function draw() {
     fill(0);
     noStroke();
     rect(0, 0, width, 50);
-    if(!testingSinglePlayer){
-        textSize(32);
-        fill(255, 255, 255);
-        text('FPS: ' + previousFrameRate, width - 160, 35);
-        text('Gen: ' + population.gen, 30, 35);
-        text('Moves: ' + population.players[0].brain.instructions.length, 200, 35);
-        text('Best Height: ' + population.bestHeight, 400, 35);
-    }
+    textSize(32);
+    fill(255, 255, 255);
+    text('FPS: ' + previousFrameRate, width - 160, 35);
     
   
   //added by me
@@ -222,9 +201,14 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
-  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight})}
+  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight});behind = true}
+  if(behind){
+    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight})
+    behind = false
+  }
 }
 
+let behind = false;
 let previousFrameRate = 60;
 
 function showLevel(levelNumberToShow) {
