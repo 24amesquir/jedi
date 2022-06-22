@@ -20,9 +20,11 @@
       var settingUp = false;
       var socket = io();
       var total = 0;
+      var indice;
       socket.on("users", (arg) => {
         if(settingUp){
         console.log(arg-1);
+        indice = arg-1;
         for(var i = 0;i<arg-1;i++){
           playersOnline.push(new Player())
           total+=1;
@@ -57,17 +59,16 @@
       //socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
       socket.on("changePos", (arg) => {
         if(settingUp){
-        console.log(arg)
         lmao = arg;
-        playersOnline[arg.index].currentPos.x = parseInt(lmao.x);
+           if(Math.floor(playersOnline[lmao.index].currentPos.x) != Math.floor(parseInt(lmao.x))){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
+            if(Math.floor(playersOnline[lmao.index].currentPos.y) != Math.floor(parseInt(lmao.y))){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
         }else{
           setTimeout(function(){
             if(settingUp){
               if(window.onload)
-              console.log(arg)
               lmao = arg;
-              if(Math.floor(playersOnline[lmao.index].currentPos.x) != Math.floor(lmao.x)){playersOnline[arg.index].currentPos.x = parseInt(lmao.x)}
-              if(Math.floor(playersOnline[lmao.index].currentPos.y) != Math.floor(lmao.y)){playersOnline[arg.index].currentPos.y = parseInt(lmao.y)}
+              if(Math.floor(playersOnline[lmao.index].currentPos.x) != Math.floor(lmao.x)){playersOnline[lmao.index].currentPos.x = parseInt(lmao.x)}
+              if(Math.floor(playersOnline[lmao.index].currentPos.y) != Math.floor(lmao.y)){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}
             }
           },1000)
         }

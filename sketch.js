@@ -144,23 +144,6 @@ function draw() {
       }
       player.jumpHeld = false
     }
-
-
-    // if(frameCount % 5==0 ){
-    //
-    //     levelNumber  = (levelNumber +1)%43;
-    // }
-    // image(backgroundImage,0,0);
-    // if (!creatingLines) {
-
-    //     if (!placingPlayer || playerPlaced) {
-    //
-    //         player.Update();
-    //         player.Show();
-    //     }
-    // } else {
-    //     image(levelImages[levelNumber], 0, 0)
-    // }
     push()
     translate(0, 50);
     if (testingSinglePlayer) {
@@ -239,7 +222,7 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
-  socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
+  if(keydown){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice})}
 }
 
 let previousFrameRate = 60;
@@ -290,8 +273,9 @@ function setupCanvas() {
     }
 }
 
-
+var keydown = false
 function keyPressed() {
+  keydown = true;
     switch (key) {
         case 'Z':
             player.jumpHeld = true;
@@ -371,7 +355,7 @@ cloneOfBestPlayer = null;
 function seconds(){var newDate = new Date();(newDate.getTime() - currentTime)/1000}
 
 function keyReleased() {
-
+    keydown = false;
     switch (key) {
         case 'Z':
               if(quickJump){
