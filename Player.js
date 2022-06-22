@@ -153,7 +153,7 @@ class Player {
     constructor() {
         this.width = 50;
         this.height = 65;
-
+  
         // this.currentPos = createVector(width / 2, height - 200); // this is the top left corner of the hitbox
         this.currentPos = createVector(width / 2, height - 200); // this is the top left corner of the hitbox
         this.currentSpeed = createVector(0, 0);
@@ -192,6 +192,11 @@ class Player {
         this.actionStarted = false;
         this.brain = new Brain(startingPlayerActions);
         this.currentAction = null;
+      
+        //rgb
+        this.r = r;
+        this.g = g;
+        this.b = b;
 
         this.playersDead = false;
 
@@ -640,17 +645,17 @@ class Player {
             scale(-1, 1);
             if (this.hasBumped) {
                 if(colored){
-                  tint(r,g,b);//changes color
+                  tint(this.r,this.g,this.b);//changes color
                 }
                 image(imageToUse, -70, -30);
             } else if (imageToUse == jumpImage || imageToUse == fallImage) {
                 if(colored){
-                  tint(r,g,b);//changes color
+                  tint(this.r,this.g,this.b);//changes color
                 }
                 image(imageToUse, -70, -28);
             } else {
                 if(colored){
-                  tint(r,g,b);//changes color
+                  tint(this.r,this.g,this.b);//changes color
                 }
                 image(imageToUse, -70, -35);
             }
@@ -659,17 +664,17 @@ class Player {
 
             if (this.hasBumped) {
                 if(colored){
-                  tint(r,g,b);//changes color
+                  tint(this.r,this.g,this.b);//changes color
                 }
                 image(imageToUse, -20, -30);
             } else if (imageToUse == jumpImage || imageToUse == fallImage) {
                 if(colored){
-                  tint(r,g,b);//changes color
+                  tint(this.r,this.g,this.b);//changes color
                 }
                 image(imageToUse, -20, -28);
             } else {
                 if(colored){
-                  tint(r,g,b);//changes color
+                  tint(this.r,this.g,this.b);//changes color
                 }
                 image(imageToUse, -20, -35);
             }

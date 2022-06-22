@@ -67,6 +67,9 @@
           if(Math.floor(play.currentPos.y) != Math.floor(parseInt(lmao.y))){playersOnline[lmao.index].currentPos.y = parseInt(lmao.y)}            
           playersOnline[lmao.index].facingRight = lmao.facingRight;
           play.shooting = lmao.shooting;
+          play.r = lmao.red;
+          play.g = lmao.green;
+          play.b = lmao.blue;
           //play.jumpHeld = lmao.jumpHeld;
         }else{
           setTimeout(function(){
@@ -79,7 +82,6 @@
               play.facingRight = lmao.facingRight;
               play.shooting = lmao.shooting;
               //play.jumpHeld = lmao.jumpHeld;
-                document.getElementsByTagName('input')[0].value = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
               }catch(error){
                   play = playersOnline[lmao.index];
               }
@@ -87,10 +89,6 @@
           },1000)
         }
       }) 
-                      function componentToHex(c) {
-                  var hex = c.toString(16);
-                  return hex.length == 1 ? "0" + hex : hex;
-                }
   </script>
     <style>
         body {
