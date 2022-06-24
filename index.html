@@ -112,8 +112,11 @@
 function printColor(ev) {
   const color = ev.target.value
   r = parseInt(color.substr(1,2), 16)
+  player.r = parseInt(color.substr(1,2), 16)
   g = parseInt(color.substr(3,2), 16)
+  player.g = parseInt(color.substr(3,2), 16)
   b = parseInt(color.substr(5,2), 16)
+  player.b = parseInt(color.substr(5,2), 16)
   console.log(`red: ${r}, green: ${g}, blue: ${b}`)
 }
 </script>

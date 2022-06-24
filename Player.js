@@ -637,7 +637,7 @@ class Player {
         //
         // }else{
 
-
+  
         let imageToUse = this.GetImageToUseBasedOnState();
 
         if (!this.facingRight) {
@@ -871,6 +871,7 @@ class Player {
     }
 
     GetImageToUseBasedOnState() {
+        
         if (!testingSinglePlayer) return idleImage
         if (this.jumpHeld && this.isOnGround) return squatImage;
         if (this.hasFallen) return fallenImage;

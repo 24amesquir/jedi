@@ -22,6 +22,13 @@ let run2Image = null;
 let run3Image = null;
 let fallenImage = null;
 let fallImage = null;
+let allisonImage = null;
+let allisonRun1 = null;
+let allisonRun2 = null;
+let allisonRun3 = null;
+let allisonRun4 = null;
+let inqImage = null;
+
 let showingLines = true;
 let showingCoins = false;
 let levelImages = [];
@@ -30,6 +37,10 @@ let placingPlayer = false;
 let placingCoins = false;
 let playerPlaced = false;
 var ouput;
+
+let allison = false;
+let arrowIndex;
+var actor;
 
 let testingSinglePlayer = true;
 
@@ -58,7 +69,12 @@ var reload = false;
 var currentTime;
 
 
-
+function alice(){
+  idleImage = actor[1];run1Image = allisonRun1;run2Image = allisonRun2;run3Image = allisonRun3;run4Image = allisonRun4;
+  player.runCycle = [run1Image, run1Image, run1Image, run1Image, run1Image, run1Image, run2Image, run2Image, run2Image, run2Image, run2Image, run2Image, run3Image, run3Image, run3Image, run3Image, run3Image, run3Image, run4Image, run4Image, run4Image, run4Image, run4Image, run4Image, idleImage, idleImage, idleImage, idleImage, idleImage, idleImage]
+}
+function inq(){idleImage = actor[2]}
+function storm(){idleImage = actor[0]}
 function preload() {
     backgroundImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/geonosis_pixel.png?v=1653500412607')
     idleImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_idle.png?v=1653191491609')
@@ -84,6 +100,12 @@ function preload() {
     shootImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_shooting.png?v=1653191491610')
     fallenImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/test-1.png?v=1653193426640')
     fallImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/storm%20trooper_fall.png?v=1653193117383')
+    allisonImage = loadImage('https://cdn.glitch.global/807096b0-8a46-477c-aa65-72efca31efd1/storm-5.png%20(1).png?v=1655952584461')
+    allisonRun1 = loadImage('https://cdn.glitch.global/807096b0-8a46-477c-aa65-72efca31efd1/New%20Piskel-2.png.png?v=1655959143070')
+    allisonRun2 = loadImage('https://cdn.glitch.global/807096b0-8a46-477c-aa65-72efca31efd1/New%20Piskel-2.png.png?v=1655959143070')
+    allisonRun3 = loadImage('https://cdn.glitch.global/807096b0-8a46-477c-aa65-72efca31efd1/New%20Piskel-3.png.png?v=1656018129090')
+    allisonRun4 = loadImage('https://cdn.glitch.global/807096b0-8a46-477c-aa65-72efca31efd1/New%20Piskel-4.png.png?v=1656018134499')
+    inqImage = loadImage('https://cdn.glitch.global/c8cc34e8-4a73-49ca-b4f1-6c80820f6e24/New%20Piskel-1.png%20(3).png?v=1654535994026')
 
 
     snowImage = loadImage('images/snow3.png')
@@ -246,17 +268,27 @@ function setupCanvas() {
     if(screen.height<950){
        document.body.style.zoom = "50%";//change it back to 77.5%dosen't work on firefox
     }
+    actor = [idleImage,allisonImage,inqImage]
 }
 
 var keydown = false
 function keyPressed() {
   keydown = true;
     switch (key) {
+      case 'A':
+        alice()
+        break;
+      case 'O':
+        inq()
+        break;
         case 'Z':
             player.jumpHeld = true;
             quickJump = true;
             setTimeout(function(){quickJump = false},1000)
             break;
+      case 'P':
+        storm()
+        break;
         case 'X':
             player.shooting = true;
             if(!reload){
@@ -277,13 +309,16 @@ function keyPressed() {
             break;
       case 'L':
         L()
+        break;
       case 'E':
         L()
         for(var i = 0;i<levels[levelNumber].lines.length;i++){
           lines.push(levels[levelNumber].lines[i])
         }
+        break;
+        
     }
-
+    arrowIndex = 0;
     switch (keyCode) {
         case LEFT_ARROW:
             player.leftHeld = true;
@@ -292,9 +327,11 @@ function keyPressed() {
             player.rightHeld = true;
             break;
         case UP_ARROW:
-            player.upHeld = true;
+            arrowIndex++
+            actor[arrowIndex]
             break;
         case DOWN_ARROW:
+            if(arrowIndex>0) arrowIndex--
             player.downHeld = true;
             break;
         case 32:
