@@ -756,6 +756,7 @@ class Player {
         let oneBullet = new bullet(-bulletSpeed,bulletDropoff);
         bulletsFired.push(oneBullet);
       }
+      socket.emit('shoot',indice)
       shootSound.play();
     }
   

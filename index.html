@@ -59,6 +59,7 @@
         },1000)
         }
       });
+      socket.on("shoot", (arg) => {playersOnline[arg].shoot();console.log(arg)});
       //socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':total-1})
       socket.on("changePos", (arg) => {
         if(settingUp){

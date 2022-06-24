@@ -160,6 +160,7 @@ function drawMousePosition() {
 let levelNumber = 0;
 
 function draw() {
+    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting});
     background(10);
     if(!window.focused){
       for(var i = 0;i<=shoot;i++){
@@ -211,14 +212,15 @@ function draw() {
       		bulletsFired.splice(i,1);
     	}*/
 	}
-  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting/*,'jumpHeld':player.jumpHeld*/});behind = true}
+  /*
+  if(keydown || player.currentSpeed.x > 0 || player.currentSpeed.y > 0){socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting});behind = true}
   if(behind){
-    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting/*,'jumpHeld':player.jumpHeld*/})
+    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting})
   }
   if(!player.currentSpeed.x > 0 || !player.currentSpeed.y > 0){
-    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting/*,'jumpHeld':player.jumpHeld*/})
+    socket.emit('update',{'x': player.currentPos.x.toString(),'y':player.currentPos.y.toString(),'red':r,'green':g,'blue':b,'index':indice,'facingRight':player.facingRight,'shooting':player.shooting})
     behind = false
-  }
+  }*/
 }
 
 let behind = false;
